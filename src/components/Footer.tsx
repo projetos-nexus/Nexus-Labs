@@ -17,7 +17,7 @@ const links = {
   ],
   contato: [
     { label: 'WhatsApp', href: WA_URLS.ctaFinal, external: true },
-    { label: 'E-mail', href: 'mailto:projetosnexus1@gmail.com', external: true },
+    { label: 'E-mail', href: 'mailto:projetosnexus1@gmail.com', external: false },
   ],
 }
 
