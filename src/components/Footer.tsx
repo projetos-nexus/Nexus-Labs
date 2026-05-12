@@ -17,7 +17,7 @@ const links = {
   ],
   contato: [
     { label: 'WhatsApp', href: WA_URLS.ctaFinal, external: true },
-    { label: 'E-mail', href: 'mailto:contato@nexuslabs.com.br', external: true },
+    { label: 'E-mail', href: 'mailto:projetosnexus1@gmail.com', external: true },
   ],
 }
 
@@ -99,7 +99,7 @@ export default function Footer() {
                 <MessageCircle size={15} />
               </a>
               <a
-                href="mailto:contato@nexuslabs.com.br"
+                href="mailto:projetosnexus1@gmail.com"
                 style={{
                   width: '36px', height: '36px', borderRadius: '9px',
                   background: 'rgba(255,255,255,0.05)',
