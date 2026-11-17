@@ -1,0 +1,84 @@
+{
+  "limiares": {
+    "aviso": 70,
+    "trocar": 85
+  },
+  "clis": {
+    "claude": {
+      "nome": "Claude Code",
+      "comando": "claude",
+      "economizar": true,
+      "janelaHoras": 5,
+      "limiteTokensJanela": null,
+      "limiteTokensSemana": null
+    },
+    "codex": {
+      "nome": "Codex",
+      "comando": "codex"
+    },
+    "antigravity": {
+      "nome": "Antigravity",
+      "comando": "agy"
+    },
+    "opencode": {
+      "nome": "OpenCode",
+      "comando": "opencode"
+    }
+  },
+  "agentes": [
+    {
+      "id": "maestro",
+      "nome": "Maestro",
+      "principal": "claude",
+      "reserva": "codex"
+    },
+    {
+      "id": "backend",
+      "nome": "Backend / Plataforma",
+      "principal": "codex",
+      "reserva": "opencode"
+    },
+    {
+      "id": "frontend",
+      "nome": "Frontend",
+      "principal": "antigravity",
+      "reserva": "codex"
+    },
+    {
+      "id": "testador",
+      "nome": "Testador",
+      "principal": "opencode",
+      "reserva": "codex"
+    },
+    {
+      "id": "avaliador",
+      "nome": "Avaliador",
+      "principal": "claude",
+      "reserva": "opencode"
+    },
+    {
+      "id": "pesquisador",
+      "nome": "Pesquisador de Referências",
+      "principal": "codex",
+      "reserva": "opencode"
+    },
+    {
+      "id": "red-team",
+      "nome": "Red Team",
+      "principal": "codex",
+      "reserva": "opencode"
+    },
+    {
+      "id": "blue-team",
+      "nome": "Blue Team",
+      "principal": "opencode",
+      "reserva": "codex"
+    },
+    {
+      "id": "tarefas-rapidas",
+      "nome": "Tarefas Rápidas",
+      "principal": "opencode",
+      "reserva": null
+    }
+  ]
+}
