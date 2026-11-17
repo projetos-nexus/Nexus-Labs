@@ -27,6 +27,9 @@ dist-ssr
 
 # Claude Code local config
 .claude/
+
+# Maestri (pastas de papéis dos agentes)
+.maestri/
 *.suo
 *.ntvs*
 *.njsproj
