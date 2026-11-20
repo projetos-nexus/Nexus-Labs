@@ -1,11 +1,12 @@
 // Setup global dos testes de unidade/componente.
 import '@testing-library/jest-dom/vitest'
-import 'vitest-axe/extend-expect'
 import * as matchers from 'vitest-axe/matchers'
 import { expect, vi } from 'vitest'
 import { cleanup } from '@testing-library/react'
 
 // vitest-axe 0.1.0 usa a API expect.extend (a mesma do jest-axe).
+// Mantemos apenas esta forma: o import 'vitest-axe/extend-expect' é redundante
+// e, no Vitest 5, já não registra os tipos do matcher (ver tests/vitest-axe.d.ts).
 expect.extend(matchers)
 
 afterEach(() => {
