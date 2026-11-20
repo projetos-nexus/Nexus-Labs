@@ -16,6 +16,7 @@ const steps = [
       'Entendemos o fluxo atual da empresa, os gargalos, os controles manuais e onde a tecnologia pode gerar mais impacto.',
     points: ['Mapeamento do problema', 'Análise do processo atual', 'Definição de prioridades'],
     accent: 'var(--color-roxo)',
+    textColor: 'var(--color-lilas-mid)',
     accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
   {
@@ -56,6 +57,7 @@ const steps = [
       'Depois da entrega, o sistema pode continuar evoluindo com melhorias, novos módulos, automações e integrações.',
     points: ['Melhorias contínuas', 'Novos módulos', 'Suporte e evolução'],
     accent: 'var(--color-roxo)',
+    textColor: 'var(--color-lilas-mid)',
     accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
 ]
@@ -110,7 +112,7 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
           <span style={{
             fontFamily: 'var(--font-display)',
             fontSize: '0.82rem', fontWeight: 800,
-            color: step.accent,
+            color: step.textColor ?? step.accent,
           }}>
             {step.number}
           </span>

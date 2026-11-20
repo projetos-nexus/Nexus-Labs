@@ -13,6 +13,7 @@ interface Metric {
   label: string
   value: string
   sub: string
+  subColor?: string
   positive: boolean | null
   icon: React.ElementType
   color: string
@@ -53,7 +54,7 @@ const TAB_DATA: Record<Tab, TabData> = {
     metrics: [
       { label: 'Pedidos Ativos',  value: '342', sub: '+27 hoje',   positive: true,  icon: Package,      color: 'var(--color-lilas-mid)' },
       { label: 'Em Produção',     value: '86',  sub: 'tempo real', positive: null,  icon: Factory,      color: 'var(--color-lilas)' },
-      { label: 'Carregamentos',   value: '41',  sub: 'hoje',       positive: null,  icon: Truck,        color: 'var(--color-roxo)' },
+      { label: 'Carregamentos',   value: '41',  sub: 'hoje',       positive: null,  icon: Truck,        color: 'var(--color-roxo)', subColor: 'var(--color-lilas-mid)' },
       { label: 'Pendências',      value: '12',  sub: 'atenção',    positive: false, icon: AlertCircle,  color: 'var(--color-text-muted)' },
     ],
     chartTitle: 'Fluxo operacional — Últimos 6 meses',
@@ -490,7 +491,7 @@ export default function InteractiveDashboardMockup() {
                   </div>
                   <div style={{
                     fontSize: '0.6rem', fontWeight: 600,
-                    color: m.positive === true ? 'var(--color-lilas)' : m.positive === false ? 'var(--color-text-muted)' : m.color,
+                    color: m.positive === true ? 'var(--color-lilas)' : m.positive === false ? 'var(--color-text-muted)' : m.subColor ?? m.color,
                   }}>
                     {m.sub}
                   </div>

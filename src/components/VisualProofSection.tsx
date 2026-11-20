@@ -216,7 +216,7 @@ function MiniAIPreview() {
         {[
           { label: 'Cliente', icon: '👤', color: 'var(--color-lilas-mid)' },
           null,
-          { label: 'Agente', icon: '🤖', color: 'var(--color-roxo)' },
+          { label: 'Agente', icon: '🤖', color: 'var(--color-roxo)', textColor: 'var(--color-lilas-mid)' },
           null,
           { label: 'Sistema', icon: '⚙️', color: 'var(--color-lilas)' },
         ].map((item, i) =>
@@ -232,7 +232,7 @@ function MiniAIPreview() {
                 fontSize: '0.85rem', marginBottom: '2px',
                 filter: 'drop-shadow(0 0 4px color-mix(in srgb, var(--color-roxo) 40%, transparent))',
               }}>{item.icon}</div>
-              <div style={{ fontSize: '0.5rem', color: item.color, fontWeight: 600 }}>{item.label}</div>
+              <div style={{ fontSize: '0.5rem', color: item.textColor ?? item.color, fontWeight: 600 }}>{item.label}</div>
             </div>
           )
         )}
@@ -302,6 +302,7 @@ const CARDS = [
   {
     icon: BarChart2,
     accent: 'var(--color-roxo)',
+    textColor: 'var(--color-lilas-mid)',
     label: 'Dashboard Executivo',
     desc: 'Painéis com indicadores, métricas e visão gerencial para decisões mais rápidas e seguras.',
     items: ['KPIs em tempo real', 'Gráficos interativos', 'Visão estratégica'],
@@ -460,7 +461,7 @@ export default function VisualProofSection() {
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                     {card.items.map(item => (
                       <span key={item} style={{
-                        fontSize: '0.68rem', color: card.accent,
+                        fontSize: '0.68rem', color: card.textColor ?? card.accent,
                         background: `color-mix(in srgb, ${card.accent} 7.1%, transparent)`, border: `1px solid color-mix(in srgb, ${card.accent} 14.5%, transparent)`,
                         borderRadius: '5px', padding: '0.18rem 0.5rem',
                         fontWeight: 500,

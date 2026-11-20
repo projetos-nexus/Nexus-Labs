@@ -8,7 +8,7 @@ const WA_PRIMARY = createWhatsAppUrl(
 )
 
 const steps = [
-  { icon: Search,  label: 'Diagnóstico',  status: 'Iniciado',     color: 'var(--color-roxo)' },
+  { icon: Search,  label: 'Diagnóstico',  status: 'Iniciado',     color: 'var(--color-roxo)', textColor: 'var(--color-lilas-mid)' },
   { icon: Layout,  label: 'Protótipo',    status: 'Validado',     color: 'var(--color-lilas-mid)' },
   { icon: Rocket,  label: 'Implantação',  status: 'Em andamento', color: 'var(--color-lilas)' },
 ]
@@ -216,7 +216,7 @@ export default function CTASection() {
                     </div>
                     <div style={{
                       display: 'flex', alignItems: 'center', gap: '0.35rem',
-                      fontSize: '0.65rem', fontWeight: 600, color: step.color,
+                      fontSize: '0.65rem', fontWeight: 600, color: step.textColor ?? step.color,
                       background: `color-mix(in srgb, ${step.color} 7.1%, transparent)`, border: `1px solid color-mix(in srgb, ${step.color} 14.5%, transparent)`,
                       borderRadius: '5px', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap', flexShrink: 0,
                     }}>

@@ -128,7 +128,7 @@ export default function ProjectCard({ project, delay = 0, inView, onDetails }: P
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', minWidth: '170px' }} className="featured-stats">
             {[
               { label: 'Status atual', value: 'Produção', color: 'var(--color-lilas)' },
-              { label: 'Módulos ativos', value: '6+', color: 'var(--color-roxo)' },
+              { label: 'Módulos ativos', value: '6+', color: 'var(--color-lilas-mid)' },
               { label: 'Implantação', value: '≤ 30 dias', color: 'var(--color-lilas-mid)' },
             ].map(s => (
               <div key={s.label} style={{

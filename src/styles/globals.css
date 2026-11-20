@@ -69,14 +69,14 @@ h1, h2, h3, h4 {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-roxo) 0%, var(--color-lilas) 100%);
+  background: linear-gradient(135deg in srgb, var(--color-lilas-mid), var(--color-lilas));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, var(--color-lilas) 0%, var(--color-lilas-mid) 50%, var(--color-roxo) 100%);
+  background: linear-gradient(135deg in srgb, var(--color-lilas), var(--color-lilas-mid));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
