@@ -42,3 +42,66 @@ Formato: `AAAA-MM-DD HH:MM | principal|reserva | decisão/ação | motivo`
 2026-11-19 21:46 | principal | T-006 APROVADA → concluída e commitada (c7f33fc); onda 1 do ciclo 01 fechada | fluxo completo
 2026-11-19 21:46 | principal | criadas T-010 (limpeza PNGs antigos) e T-011 (logo pequeno na Navbar, sugestão do Avaliador) | follow-ups
 2026-11-19 21:46 | principal | public/nova-identidade/svg/ (criada 21:32, não rastreada): Frontend nega autoria; perguntar ao Kaio | área somente leitura
+2026-11-19 21:58 | principal | Kaio confirmou autoria de public/nova-identidade/svg/; commits 4d5e51a (SVGs) e 4fc85b5 (notas da equipe) | resposta do Kaio
+2026-11-19 21:58 | principal | Kaio pediu: foto dele no portfólio + estrutura multipágina com páginas detalhando cada segmento → ciclo 02 redefinido; P-002 ao Pesquisador | pedido do Kaio
+2026-11-19 21:58 | principal | onda 2 distribuída: Frontend T-011→T-003→T-005 (trava index.html fontes); Backend T-004 (src/data); Testador T-008; Tarefas-Rapidas T-010 (trava PNGs sem uso) | OK do Kaio
+2026-11-19 21:59 | principal | T-004 parte Backend recebida (cores de projects.ts conferidas, todas da tabela; âmbar → #8B5CF6) → Testador | fluxo
+2026-11-19 21:59 | principal | T-010 recebida (9 PNG, ~3,1 MB removidos); trava liberada; fila do Testador após T-004 | fluxo
+2026-11-19 22:01 | principal | P-002 recebida (RR v7 Framework Mode + prerender; 17 rotas; foto 1200x1500 4:5); proposta do ciclo 02 enviada ao Kaio | aguardando decisões
+2026-11-19 22:01 | principal | T-004 Backend passou no Testador → Avaliador; T-010 → Testador | fluxo
+2026-11-19 22:02 | principal | T-004 parte Backend APROVADA → commitada (caa6e98); obs. do Avaliador vira critério da T-004 Frontend: link 'Comprar ou adaptar' com accent #8B5CF6 dá ~4,3:1 (< AA) → texto claro no componente | fluxo
+2026-11-19 22:03 | principal | T-010 passou no Testador → Avaliador | fluxo
+2026-11-19 22:04 | principal | T-010 APROVADA → commitada (eefe2ce); favicon.png redundante e README.txt de logos entram na T-007 | fluxo
+2026-11-19 22:07 | principal | Antigravity (Frontend) esgotou cota no meio da T-011 (renova em 167h, ~26/11 21:10) → marcado; Frontend-Reserva (Codex) ATIVADO; passagem reescrita pelo Maestro com o estado real | protocolo de cota
+2026-11-19 22:10 | principal | T-011 recebida (Frontend-Reserva/codex): logo 29,25px desktop / 22,5px em 360; menu compacto passou para < 900px (evitar corte do CTA no tablet) → Testador | fluxo
+2026-11-19 22:10 | principal | T-008 entregue (infra ok; suítes falham só por bugs reais) → Avaliador; B-002/B-004 (Footer) → T-013 Tarefas-Rapidas com trava; B-003 (overflow) → T-012 Frontend após T-003 | fluxo
+2026-11-19 22:12 | principal | T-008 APROVADA → commitada (4e03ea0) com .gitignore das saídas de teste; criadas T-014 (Backend: @axe-core/playwright + tipos dos testes) e T-015 (Testador: contraste no e2e + S2/S3/S6/S7); S4 (rotas) entra no ciclo 02 | parecer T-008
+2026-11-19 22:12 | principal | Frontend-Reserva deixou capturas src/assets/.frontend-qa-*.png → pedir remoção na entrega da T-003 | higiene
+2026-11-19 22:12 | principal | T-013 recebida (npm test 2/2 ok); trava do Footer liberada; fila do Testador após T-011 | fluxo
+2026-11-19 22:14 | principal | T-003 recebida (cores conferidas: 4 componentes sem literais; globals só tabela; MotionConfig ok) → fila do Testador (T-011 → T-013 → T-003); Frontend: remover capturas de src/assets, depois T-005 → T-012 → T-004 Frontend | fluxo
+2026-11-19 22:14 | principal | T-014 entregue (@axe-core/playwright 4.14.0; npm run typecheck com 4 arquivos de teste com erro) → testada dentro da T-015 (Testador), avaliação conjunta T-014+T-015 | economia de rodada
+2026-11-19 22:14 | principal | T-011 passou → Avaliador; Testador recebe T-013, T-003 e T-015 em sequência | fluxo
+2026-11-19 22:15 | principal | T-005 recebida (grep: sem Space Grotesk/Google Fonts; @fontsource importados; capturas removidas de src/assets); trava do index.html liberada; fila do Testador: T-013 → T-003 → T-005 → T-015 | fluxo
+2026-11-19 22:15 | principal | T-011 APROVADA; commit adiado para sair junto com T-003/T-005, que alteraram o mesmo Navbar.tsx no working tree; c2pa nos SVG → perguntar ao Kaio; padronizar breakpoints → anotado para o ciclo 02 (layout compartilhado) | evitar commit misturado/parcial
+2026-11-19 22:16 | principal | T-012 recebida → fila do Testador (T-013 → T-003 → T-005 → T-012 → T-015); Frontend-Reserva segue na T-004 parte Frontend | fluxo
+2026-11-19 22:17 | principal | T-013 passou → Avaliador | fluxo
+2026-11-19 22:17 | principal | T-013 APROVADA; commit adiado (Footer.tsx misturado com T-005/T-012); sugestões (contraste dos títulos do Footer ~3,1:1; aria-label do e-mail) → critérios da T-004 Frontend | fluxo
+2026-11-19 22:19 | principal | T-004 Frontend recebida → fila do Testador; varredura do Maestro achou cores fora da paleta em Navbar.tsx e Home.tsx (não estavam em nenhuma tarefa — lacuna do Maestro) → T-016 Frontend | fluxo
+2026-11-19 22:20 | principal | T-003 passou → Avaliador | fluxo
+2026-11-19 22:22 | principal | T-003 APROVADA; commit agrupado depois de T-005/T-012/T-004 (mesmos arquivos); cobertura do menu em 768 acrescentada à T-015 | fluxo
+2026-11-19 22:22 | principal | decisão para o Kaio: cores de status no Dashboard (verde/vermelho removidos; "Pendências/atenção" ficou pouco destacado) | parecer T-003
+2026-11-19 22:22 | principal | T-016 recebida: varredura do Maestro confirma src 100% na paleta; remoção de react.svg/vite.svg (extra, área do Frontend) aceita → fila do Testador | fluxo
+2026-11-19 22:22 | principal | T-007 enviada ao Backend (favicon NX, apple-touch, theme-color, OG provisória; og:url/canonical aguardam domínio; trava favicon.png/README de logos) | fecha código do ciclo 01
+2026-11-19 22:24 | principal | T-005 passou → Avaliador | fluxo
+2026-11-19 22:24 | principal | T-005 APROVADA (Michroma: manter import, reavaliar no fim do ciclo 02); comentário vazio 'Fonts' no index.html → T-007 | fluxo
+2026-11-19 22:26 | principal | T-007 recebida (favicon NX, apple-touch, OG 19 KB; domínio pendente); trava liberada → fila do Testador | fluxo
+2026-11-19 22:28 | principal | T-012 passou → Avaliador | fluxo
+2026-11-19 22:29 | principal | T-012 APROVADA (causa corrigida) | fluxo
+2026-11-19 22:31 | principal | T-004 Frontend passou → Avaliador | fluxo
+2026-11-19 22:31 | principal | T-004 Frontend APROVADA; sugestões (extrair statusStyle de ProjectCard/Modal; status 'Projeto pronto' = 'Sob medida' no mesmo estilo) entram na decisão de cores de status pendente com o Kaio | fluxo
+2026-11-19 22:41 | principal | T-016 passou → Avaliador | fluxo
+2026-11-19 22:42 | principal | T-016 APROVADA; Avaliador achou B-005: .btn-primary (8 CTAs) a 3,84:1 desde a T-002 (aprovada sem medir isso) → T-017 Frontend-Reserva; README.txt/favicon.png de logos são da T-007 (Backend, trava) — esclarecido | fluxo
+2026-11-19 22:45 | principal | T-017 recebida (gradiente #7C3AED→#6D28D9) → fila do Testador (T-007 → T-017 → T-015) | fluxo
+2026-11-19 22:45 | principal | T-007 passou → Avaliador | fluxo
+2026-11-19 22:46 | principal | T-007 REPROVADA pelo Avaliador (favicon.svg transparente: N some em aba clara) → volta ao Backend; reprovações: 1 | fluxo
+2026-11-19 22:47 | principal | T-007 corrigida (favicon.svg com fundo #0B0A12, sem c2pa) → reteste no Testador | fluxo
+2026-11-19 22:48 | principal | T-017 passou (5,16:1 pior caso) → Avaliador | fluxo
+2026-11-19 22:49 | principal | T-017 APROVADA (5,16:1); ressalva: relatório do Testador cita outline 3px claro inexistente → Testador confere na T-015 | fluxo
+2026-11-19 22:51 | principal | T-007 passou no reteste → Avaliador | fluxo
+2026-11-19 22:52 | principal | T-007 APROVADA na reavaliação; commit conjunto 21a115b (T-003, T-004 Frontend, T-005, T-007, T-011, T-012, T-013, T-016, T-017); fora do commit: package.json/lock + tsconfig.test.json (T-014) e tests/ (T-015) | fluxo
+2026-11-19 22:53 | principal | rodada de segurança do ciclo 01 aberta: Red-Team (codex) ataca commit 21a115b; conferência independente posterior no Red-Team-Reserva (opencode) por o código ser majoritariamente do codex | fluxo REGRAS §4
+2026-11-19 22:57 | principal | Red Team: 3 achados (S-001 média deps de dev; S-002 baixa cabeçalhos; S-003 baixa retrato do Kaio em public/nova-identidade/foto/ publicado sem uso). S-002 → Blue Team agora; S-001 → Blue Team depois do commit da T-014 (mesmo package.json); S-003 → Kaio; conferência independente → Red-Team-Reserva | fluxo
+2026-11-19 22:57 | principal | registro: a foto do Kaio (public/nova-identidade/foto/, 21:55) entrou no commit local 4d5e51a junto com os SVGs (git add da pasta); não houve push | transparência
+2026-11-19 22:58 | principal | T-015 (com teste da T-014) concluída pelo Testador → Avaliador (avaliação conjunta T-014+T-015) | fluxo
+2026-11-19 23:01 | principal | conferência do Red-Team-Reserva: 1 novo achado S-004 (baixa, public/icons.svg órfão de terceiros) → Tarefas-Rapidas com trava; Blue Team ocupado no S-002 | fluxo
+2026-11-19 23:02 | principal | S-002 corrigido pelo Blue Team (vercel.json com 6 cabeçalhos) e reverificado/fechado pelo Red Team; pendente só validar na Vercel no preview | fluxo Red→Blue→Red
+2026-11-19 23:02 | principal | T-014 APROVADA → commitada (82b6d44); T-015 REPROVADA (O1: axe analisa antes de rolar, seções com opacity 0 por inView ficam fora — só ~20% dos textos medidos) → volta ao Testador; S-004 corrigido → Red Team reverifica; S-001 liberado ao Blue Team (package.json agora commitado) | fluxo
+2026-11-19 23:03 | principal | T-015 corrigida (axe após rolar a página inteira; ~320 nós avaliados vs 66) → Avaliador | fluxo
+2026-11-19 23:04 | principal | S-004 fechado pelo Red Team; commit de S-002+S-004 (7b67cea) | fluxo Red→Blue→Red
+2026-11-19 23:05 | principal | T-015 APROVADA na reavaliação → commitada (4ff8d08); Avaliador achou B-006 (7 textos roxo 4,0–4,2:1 em fundos tingidos, 'incomplete' no axe) → T-018 Frontend-Reserva | fluxo
+2026-11-19 23:09 | principal | S-001 corrigido pelo Blue Team (audit 19→0; vite 8.3.8, sharp 0.35.5, eslint 10.15, ts-eslint 8.73 + 4 overrides; favicons PNG em public/ não regravados) → Red Team reverifica | fluxo
+2026-11-19 23:10 | principal | T-018 recebida (pior caso 6,18:1) → Testador | fluxo
+2026-11-19 23:10 | principal | S-001 fechado pelo Red Team; commit 2721977; restam no ciclo 01: T-018 (teste) e S-003 (decisão do Kaio) | fluxo
+2026-11-19 23:28 | principal | T-018 passou (177 textos roxo/lilás, 0 < 4,5:1; mín. 5,90:1) → Avaliador | fluxo
+2026-11-19 23:30 | principal | T-018 APROVADA → commitada (db83cb5); verificação final do Maestro: build, lint, typecheck, test ok; npm audit 0 | fluxo
+2026-11-19 23:30 | principal | CICLO 01 CONCLUÍDO; relatório enviado ao Kaio; pendente S-003 e decisões do ciclo 02 | fim de ciclo

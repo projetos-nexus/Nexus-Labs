@@ -1,0 +1,8 @@
+[HANDOFF] De: Testador → Para: Maestro (encaminhar ao Avaliador para reavaliação)
+Tarefa: T-015 — Correção do O1 (cobertura do axe no navegador)
+Status: concluído
+CLI usada: opencode (principal)
+O que foi feito: O teste de axe agora rola a página inteira antes do analyze(), com emulateMedia({ reducedMotion: 'reduce' }) e espera pelo fim das animações, disparando todos os inView do framer-motion. A contagem do log passou a ser de nós (nodes.length), não de regras. Cobertura subiu de 66 para 316 nós em 360, 318 em 768 e 323 em 1440 (34 aprovados + 289 incompletos em 1440, conferindo com a medição do Avaliador), com 0 textos invisíveis nos 3 viewports. Conferi manualmente 12 dos nós incompletos em 1440 (navbar links 7,45:1, CTAs 5,16:1, títulos 17,84:1; .gradient-text é gradiente na cor do texto por background-clip, 4,65:1 a 10,67:1 — o 1,67 inicial foi falso positivo da medição genérica). Nenhuma violação real na amostra. Nenhuma regra desabilitada, nenhuma violação mascarada; adicionada falha explícita se a cobertura cair abaixo de 100 nós.
+Arquivos alterados: apenas e2e/home.spec.ts e o relatorio .equipe/relatorios/testes/20261119-2258-T-015-axe-contraste-typecheck.md (secoes 2, 6, 7, 8 e 9). Nenhum codigo de producao, nenhum package.json, nenhum commit.
+Como verificar: npm run test:e2e -> 14 passed, 1 skipped, exit 0, 29.6s; logs [axe ...] com contagem de nos. npm run typecheck exit 0, npm test 2/2, build e lint exit 0.
+Pendencias/riscos: os nos incomplete (gradientes/glass/sobreposicoes) continuam sem falhar o teste, conforme S2 do Avaliador; a cobertura automatizada vale para os nos passes, e os CTAs com gradiente seguem medidos por pixel na T-017. reducedMotion gera um console.warn do framer-motion, nao um erro.

@@ -1,9 +1,9 @@
 ﻿# Passagem — backend
-Atualizado: 2026-11-19 21:16 por principal (Codex)
-Tarefa atual: T-001 — Higiene, fontes self-host e dependências de teste
-Feito até agora: Dependências e scripts atualizados. npm ci --no-audit validado em cópia limpa, build e lint passaram na raiz. Handoff salvo em .equipe/handoffs/20261119-2116-backend-para-maestro-T-001.md.
-Próximo passo exato: Entrega enviada ao Maestro via Maestri. Aguardar retorno do Testador ou nova tarefa.
+Atualizado: 2026-11-19 22:47 por principal (Codex)
+Tarefa atual: T-007 — Correção do favicon SVG
+Feito até agora: Gerado favicon quadrado com fundo escuro, cantos arredondados e sem C2PA. Chromium, build, lint e Vitest verificados. Handoff salvo em .equipe/handoffs/20261119-2247-backend-para-maestro-T-007-correcao.md.
+Próximo passo exato: Handoff enviado ao Maestro pelo Maestri. Aguardar reavaliação.
 Arquivos em edição: Nenhum.
-Decisões: Manter Google Fonts até a T-005. A T-008 fará as configurações e suítes.
-Dúvidas abertas: Nenhuma. O handoff registra o EPERM na instalação limpa da raiz, o resultado da auditoria e o diretório temporário ignorado.
+Decisões: Preservadas as cores e os traçados do monograma oficial.
+Dúvidas abertas: Nenhuma.
 

@@ -1,8 +1,8 @@
 # Passagem — maestro
-Atualizado: 2026-11-19 21:46 por principal (Claude Code)
-Tarefa atual: onda 1 concluída; aguardando OK do Kaio para onda 2 e origem de public/nova-identidade/svg/
-Feito até agora: branch ciclo/01-identidade criada; T-001 (Backend), T-002→T-006 (Frontend), T-009 (Tarefas-Rapidas) enviadas; handoffs em .equipe/handoffs/*-maestro-para-*.
-Próximo passo exato: receber cada handoff → repassar ao Testador → Avaliador. Depois da onda 1: onda 2 (T-003, T-004, T-005, T-008), T-010 limpeza de PNGs sem uso após T-006.
-Arquivos em edição (não terminados): nenhum do Maestro.
-Decisões tomadas nesta tarefa: aria-label do menu foi para T-006; limpeza de PNGs virou T-010.
-Dúvidas abertas: domínio (Kaio decide depois); SVG dos logos (Kaio vai mandar); alterações em .equipe/*.md feitas pelo Kaio ainda não commitadas.
+Atualizado: 2026-11-19 23:30 por principal (Claude Code)
+Tarefa atual: ciclo 01 concluído; aguardando decisões do Kaio para o ciclo 02.
+Feito até agora: ciclo 01 inteiro (T-001..T-018, S-001/S-002/S-004 fechados), commits na branch ciclo/01-identidade até db83cb5 (sem push). Relatório de fim de ciclo enviado ao Kaio.
+Próximo passo exato: ler respostas do Kaio (ciclo 02: arquitetura, sites sob medida, setores, rascunhos de texto; cores de status A/B; c2pa; S-003 foto; domínio; push). Então montar ciclo 02 a partir de .equipe/pesquisas/P-002-estrutura-multipagina.md.
+Arquivos em edição (não terminados): nenhum.
+Decisões tomadas nesta tarefa: ver LOG-MAESTRO.md.
+Dúvidas abertas: as listadas acima. Antigravity esgotado até ~26/11 (Frontend no reserva Codex).
