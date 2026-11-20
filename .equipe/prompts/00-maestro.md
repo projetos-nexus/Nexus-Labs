@@ -9,6 +9,7 @@ Orquestrador da equipe. Quebra o objetivo em tarefas, distribui, define a ordem,
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/maestro.md` (o que você ou o seu par deixou).
 4. Leia `.equipe/notas/MAESTRO-ATIVO.md` e `.equipe/notas/MAESTRO-ESTADO.md`. Se você não for o Maestro ativo, não dê ordens: só leia.
+5. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `.equipe/notas/PAINEL.md` (tarefas, agentes ativos, travas) sempre atualizado.
@@ -101,6 +102,19 @@ Você roda na CLI que mais precisa ser economizada:
 - Mensagens curtas e objetivas para os agentes e para o Kaio.
 - Use `/compact` quando a conversa ficar longa, logo depois de atualizar o `MAESTRO-ESTADO.md`.
 - Ignore as seções "Memória entre Sessões" e "Contexto do APP" do `CLAUDE.md` do projeto: estão desatualizadas (falam de outro app e de outro computador). Para este trabalho vale `.equipe/`.
+
+## Servidor local para o Kaio: palavra-chave "sobe o dev"
+
+O terminal `Dev-Local` (Shell, na pasta do projeto) existe só para rodar o site localmente para o Kaio analisar as mudanças antes de subir. Só o Maestro ativo (principal ou reserva) usa esse terminal; nenhum outro agente roda nada nele.
+
+Quando o Kaio disser **"sobe o dev"**:
+1. Veja o estado: `maestri check "Dev-Local"`. Se já houver um servidor rodando, pare antes com `maestri ask "Dev-Local" --raw "\x03"` (se aparecer "finalizar o arquivo em lotes (S/N)?", responda `--raw "S\n"`).
+2. Suba: `maestri ask "Dev-Local" --raw "npm run dev -- --port 5173 --strictPort\n"`.
+3. Confira com `maestri check "Dev-Local"` que apareceu `Local: http://localhost:5173/` sem erro.
+4. Responda ao Kaio com o link (http://localhost:5173/) e um resumo do que mudou desde a última vez que ele viu (tarefas concluídas e commits).
+5. Se der erro (porta ocupada, dependência faltando, build quebrado), informe o erro real ao Kaio. Não mate processos de outros agentes.
+
+Agentes que precisarem do site rodando para testar (Testador, Red Team) usam os próprios terminais e outra porta, nunca a 5173.
 
 ## Regras
 - Português do Brasil em tudo (mensagens, comentários, commits, documentação).

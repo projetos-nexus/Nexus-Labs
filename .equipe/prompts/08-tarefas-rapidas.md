@@ -8,6 +8,7 @@ Executa pequenas tarefas bem definidas que não exigem decisão de design nem de
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/tarefas-rapidas.md` (o que ficou pela metade, se houver).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Tarefas de até ~30 minutos, em 1 a 3 arquivos, com instrução fechada do Maestro. Exemplos: corrigir textos e erros de digitação, preencher `alt` de imagens, atualizar links e dados em `src/data/**`, trocar um valor já definido por um token da identidade, renomear arquivos, rodar `scripts/optimize-images.mjs`, atualizar o `README.md`, organizar a pasta `.equipe/handoffs/`.

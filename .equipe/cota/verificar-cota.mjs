@@ -20,14 +20,16 @@
 //                  você preencher "limiteTokensJanela" no config.json.
 //   Codex       -> lê o último "rate_limits" gravado nas sessões (~/.codex/sessions). Quando
 //                  existe, é o percentual oficial que o próprio Codex recebeu da OpenAI.
-//   Antigravity e OpenCode -> não expõem uso localmente. Vale o que for marcado com "marcar".
+//   OpenCode    -> lê "opencode stats --days 0 --json" (tokens e custo de hoje). Percentual só se
+//                  "limiteTokensDia" estiver preenchido no config.json.
+//   Antigravity -> não expõe uso localmente. Vale o que for marcado com "marcar".
 // Marcações manuais ("marcar ... esgotado") sempre têm prioridade sobre a leitura automática.
 // =============================================================================
 
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -259,9 +261,32 @@ function lerAntigravity() {
 }
 
 // ----------------------------------------------------------------------------- OpenCode
-function lerOpenCode() {
-  return { cli: 'opencode', fonte: 'somente marcação manual', confiavel: false, percentual: null,
-    detalhe: 'depende do provedor configurado no OpenCode; use "marcar opencode esgotado" quando acabar', esgotado: false, reset: null };
+// Lê "opencode stats --days 0 --json" (uso de hoje, todos os projetos). Percentual só se
+// "limiteTokensDia" estiver preenchido no config.json (o modelo gratuito não publica limite).
+function lerOpenCode(cfg) {
+  const r = { cli: 'opencode', fonte: 'opencode stats (hoje)', confiavel: false };
+  let s;
+  try {
+    const txt = execSync(`${cfg.comando || 'opencode'} stats --days 0 --json`,
+      { encoding: 'utf8', timeout: 30000, stdio: ['ignore', 'pipe', 'ignore'] });
+    s = JSON.parse(txt.slice(txt.indexOf('{')));
+  } catch (e) {
+    return { ...r, erro: 'não consegui rodar "opencode stats" (' + e.message.split('\n')[0] + ')' };
+  }
+  const t = s.tokens || {};
+  const usados = (t.input || 0) + (t.output || 0) + (t.reasoning || 0) + ((t.cache && t.cache.write) || 0);
+  const lidos = (t.cache && t.cache.read) || 0;
+  const limite = cfg.limiteTokensDia || null;
+  const amanha = new Date(AGORA); amanha.setHours(24, 0, 0, 0);
+  return {
+    ...r,
+    confiavel: !!limite,
+    percentual: limite ? Math.min(100, Math.round((usados / limite) * 100)) : null,
+    detalhe: `hoje: ${fmtNum(usados)} tokens` + (limite ? ` de ~${fmtNum(limite)}` : ' (sem limite configurado)') +
+      ` + ${fmtNum(lidos)} de cache · ${s.prompts || 0} pedidos · ${s.sessions || 0} sessões · custo US$ ${(s.cost || 0).toFixed(2)}`,
+    esgotado: false,
+    reset: limite ? amanha : null,
+  };
 }
 
 // ----------------------------------------------------------------------------- avaliação

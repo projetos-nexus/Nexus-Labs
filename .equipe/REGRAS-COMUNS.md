@@ -84,6 +84,19 @@ Regras de cor:
 
 Status possíveis no painel: `a-fazer`, `em-andamento`, `em-teste`, `em-avaliacao`, `em-seguranca`, `reprovado`, `bloqueado`, `concluido`.
 
+### Servidor local para o Kaio: palavra-chave "sobe o dev"
+
+O terminal `Dev-Local` (Shell, na pasta do projeto) existe só para rodar o site localmente para o Kaio analisar as mudanças antes de subir. Só o Maestro ativo (principal ou reserva) usa esse terminal; nenhum outro agente roda nada nele.
+
+Quando o Kaio disser **"sobe o dev"**:
+1. Veja o estado: `maestri check "Dev-Local"`. Se já houver um servidor rodando, pare antes com `maestri ask "Dev-Local" --raw "\x03"` (se aparecer "finalizar o arquivo em lotes (S/N)?", responda `--raw "S\n"`).
+2. Suba: `maestri ask "Dev-Local" --raw "npm run dev -- --port 5173 --strictPort\n"`.
+3. Confira com `maestri check "Dev-Local"` que apareceu `Local: http://localhost:5173/` sem erro.
+4. Responda ao Kaio com o link (http://localhost:5173/) e um resumo do que mudou desde a última vez que ele viu (tarefas concluídas e commits).
+5. Se der erro (porta ocupada, dependência faltando, build quebrado), informe o erro real ao Kaio. Não mate processos de outros agentes.
+
+Agentes que precisarem do site rodando para testar (Testador, Red Team) usam os próprios terminais e outra porta, nunca a 5173.
+
 ## 5. Protocolo de comunicação
 
 Toda mensagem entre agentes vai **pelo Maestri e também em arquivo** em `.equipe/handoffs/` com o nome `AAAAMMDD-HHMM-<de>-para-<para>-<T-xxx>.md`. O arquivo é o que sobrevive se a cota acabar no meio.
@@ -191,6 +204,7 @@ Dúvidas abertas:
 
 ## 7. Regras para todos os agentes
 
+- **Todo terminal abre com o resumo do chat.** A primeira resposta de cada sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Monte o resumo a partir de `.equipe/notas/` (PAINEL, a sua passagem e, no caso do Maestro, MAESTRO-ESTADO e LOG-MAESTRO) e dos handoffs mais recentes do seu papel. Por isso a nota de passagem precisa estar sempre atual.
 - Português do Brasil em tudo: mensagens, comentários de código, commits e documentação.
 - Não inventar requisitos. Dúvida vai para o Maestro, nunca direto para o Kaio.
 - Tarefas pequenas e verificáveis, com explicação curta do que foi feito.

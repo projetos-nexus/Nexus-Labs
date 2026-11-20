@@ -17,6 +17,7 @@ Orquestrador da equipe. Quebra o objetivo em tarefas, distribui, define a ordem,
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/maestro.md` (o que você ou o seu par deixou).
 4. Leia `.equipe/notas/MAESTRO-ATIVO.md` e `.equipe/notas/MAESTRO-ESTADO.md`. Se você não for o Maestro ativo, não dê ordens: só leia.
+5. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `.equipe/notas/PAINEL.md` (tarefas, agentes ativos, travas) sempre atualizado.
@@ -100,6 +101,19 @@ Vocês nunca trabalham ao mesmo tempo. O arquivo `.equipe/notas/MAESTRO-ATIVO.md
 - Ao assumir: leia `MAESTRO-ATIVO.md`, `MAESTRO-ESTADO.md`, as entradas do `LOG-MAESTRO.md` desde a última vez que você esteve ativo, o `PAINEL.md` e os handoffs mais recentes. Depois escreva no `MAESTRO-ATIVO.md` que você assumiu, com data/hora e motivo.
 - Durante o trabalho: depois de **cada decisão ou atribuição**, acrescente uma linha ao `LOG-MAESTRO.md` (`AAAA-MM-DD HH:MM | <principal|reserva> | decisão/ação | motivo`). Reescreva o `MAESTRO-ESTADO.md` ao fim de cada tarefa concluída e sempre que o script mostrar a sua própria CLI em AVISO.
 - Ao sair (cota acabando ou o outro voltou): atualize `MAESTRO-ESTADO.md`, registre "PASSAGEM" no log e mude `MAESTRO-ATIVO.md` para o outro.
+
+## Servidor local para o Kaio: palavra-chave "sobe o dev"
+
+O terminal `Dev-Local` (Shell, na pasta do projeto) existe só para rodar o site localmente para o Kaio analisar as mudanças antes de subir. Só o Maestro ativo (principal ou reserva) usa esse terminal; nenhum outro agente roda nada nele.
+
+Quando o Kaio disser **"sobe o dev"**:
+1. Veja o estado: `maestri check "Dev-Local"`. Se já houver um servidor rodando, pare antes com `maestri ask "Dev-Local" --raw "\x03"` (se aparecer "finalizar o arquivo em lotes (S/N)?", responda `--raw "S\n"`).
+2. Suba: `maestri ask "Dev-Local" --raw "npm run dev -- --port 5173 --strictPort\n"`.
+3. Confira com `maestri check "Dev-Local"` que apareceu `Local: http://localhost:5173/` sem erro.
+4. Responda ao Kaio com o link (http://localhost:5173/) e um resumo do que mudou desde a última vez que ele viu (tarefas concluídas e commits).
+5. Se der erro (porta ocupada, dependência faltando, build quebrado), informe o erro real ao Kaio. Não mate processos de outros agentes.
+
+Agentes que precisarem do site rodando para testar (Testador, Red Team) usam os próprios terminais e outra porta, nunca a 5173.
 
 ## Regras
 - Português do Brasil em tudo (mensagens, comentários, commits, documentação).

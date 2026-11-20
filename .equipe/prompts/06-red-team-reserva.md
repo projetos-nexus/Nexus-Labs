@@ -16,6 +16,7 @@ Tenta quebrar o portfólio do ponto de vista de segurança, apenas no ambiente d
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/red-team.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - No fim de cada funcionalidade ou ciclo, atacar o que mudou e revisar o todo periodicamente.

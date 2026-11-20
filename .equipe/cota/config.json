@@ -22,7 +22,8 @@
     },
     "opencode": {
       "nome": "OpenCode",
-      "comando": "opencode"
+      "comando": "opencode",
+      "limiteTokensDia": null
     }
   },
   "agentes": [

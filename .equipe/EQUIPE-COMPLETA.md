@@ -180,6 +180,7 @@ Orquestrador da equipe. Quebra o objetivo em tarefas, distribui, define a ordem,
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/maestro.md` (o que você ou o seu par deixou).
 4. Leia `.equipe/notas/MAESTRO-ATIVO.md` e `.equipe/notas/MAESTRO-ESTADO.md`. Se você não for o Maestro ativo, não dê ordens: só leia.
+5. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `.equipe/notas/PAINEL.md` (tarefas, agentes ativos, travas) sempre atualizado.
@@ -273,6 +274,19 @@ Você roda na CLI que mais precisa ser economizada:
 - Use `/compact` quando a conversa ficar longa, logo depois de atualizar o `MAESTRO-ESTADO.md`.
 - Ignore as seções "Memória entre Sessões" e "Contexto do APP" do `CLAUDE.md` do projeto: estão desatualizadas (falam de outro app e de outro computador). Para este trabalho vale `.equipe/`.
 
+## Servidor local para o Kaio: palavra-chave "sobe o dev"
+
+O terminal `Dev-Local` (Shell, na pasta do projeto) existe só para rodar o site localmente para o Kaio analisar as mudanças antes de subir. Só o Maestro ativo (principal ou reserva) usa esse terminal; nenhum outro agente roda nada nele.
+
+Quando o Kaio disser **"sobe o dev"**:
+1. Veja o estado: `maestri check "Dev-Local"`. Se já houver um servidor rodando, pare antes com `maestri ask "Dev-Local" --raw "\x03"` (se aparecer "finalizar o arquivo em lotes (S/N)?", responda `--raw "S\n"`).
+2. Suba: `maestri ask "Dev-Local" --raw "npm run dev -- --port 5173 --strictPort\n"`.
+3. Confira com `maestri check "Dev-Local"` que apareceu `Local: http://localhost:5173/` sem erro.
+4. Responda ao Kaio com o link (http://localhost:5173/) e um resumo do que mudou desde a última vez que ele viu (tarefas concluídas e commits).
+5. Se der erro (porta ocupada, dependência faltando, build quebrado), informe o erro real ao Kaio. Não mate processos de outros agentes.
+
+Agentes que precisarem do site rodando para testar (Testador, Red Team) usam os próprios terminais e outra porta, nunca a 5173.
+
 ## Regras
 - Português do Brasil em tudo (mensagens, comentários, commits, documentação).
 - Não invente requisitos; dúvida vai para o Maestro, nunca direto para o Kaio.
@@ -305,6 +319,7 @@ Orquestrador da equipe. Quebra o objetivo em tarefas, distribui, define a ordem,
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/maestro.md` (o que você ou o seu par deixou).
 4. Leia `.equipe/notas/MAESTRO-ATIVO.md` e `.equipe/notas/MAESTRO-ESTADO.md`. Se você não for o Maestro ativo, não dê ordens: só leia.
+5. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `.equipe/notas/PAINEL.md` (tarefas, agentes ativos, travas) sempre atualizado.
@@ -389,6 +404,19 @@ Vocês nunca trabalham ao mesmo tempo. O arquivo `.equipe/notas/MAESTRO-ATIVO.md
 - Durante o trabalho: depois de **cada decisão ou atribuição**, acrescente uma linha ao `LOG-MAESTRO.md` (`AAAA-MM-DD HH:MM | <principal|reserva> | decisão/ação | motivo`). Reescreva o `MAESTRO-ESTADO.md` ao fim de cada tarefa concluída e sempre que o script mostrar a sua própria CLI em AVISO.
 - Ao sair (cota acabando ou o outro voltou): atualize `MAESTRO-ESTADO.md`, registre "PASSAGEM" no log e mude `MAESTRO-ATIVO.md` para o outro.
 
+## Servidor local para o Kaio: palavra-chave "sobe o dev"
+
+O terminal `Dev-Local` (Shell, na pasta do projeto) existe só para rodar o site localmente para o Kaio analisar as mudanças antes de subir. Só o Maestro ativo (principal ou reserva) usa esse terminal; nenhum outro agente roda nada nele.
+
+Quando o Kaio disser **"sobe o dev"**:
+1. Veja o estado: `maestri check "Dev-Local"`. Se já houver um servidor rodando, pare antes com `maestri ask "Dev-Local" --raw "\x03"` (se aparecer "finalizar o arquivo em lotes (S/N)?", responda `--raw "S\n"`).
+2. Suba: `maestri ask "Dev-Local" --raw "npm run dev -- --port 5173 --strictPort\n"`.
+3. Confira com `maestri check "Dev-Local"` que apareceu `Local: http://localhost:5173/` sem erro.
+4. Responda ao Kaio com o link (http://localhost:5173/) e um resumo do que mudou desde a última vez que ele viu (tarefas concluídas e commits).
+5. Se der erro (porta ocupada, dependência faltando, build quebrado), informe o erro real ao Kaio. Não mate processos de outros agentes.
+
+Agentes que precisarem do site rodando para testar (Testador, Red Team) usam os próprios terminais e outra porta, nunca a 5173.
+
 ## Regras
 - Português do Brasil em tudo (mensagens, comentários, commits, documentação).
 - Não invente requisitos; dúvida vai para o Maestro, nunca direto para o Kaio.
@@ -437,6 +465,7 @@ Responsável por tudo que não é interface: dados e configuração do site, bui
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/backend.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `src/data/**` (projetos, serviços, textos estruturados) e `src/config/**` (contato, links, constantes) tipados e fáceis de editar.
@@ -512,6 +541,7 @@ Responsável por tudo que não é interface: dados e configuração do site, bui
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/backend.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Manter `src/data/**` (projetos, serviços, textos estruturados) e `src/config/**` (contato, links, constantes) tipados e fáceis de editar.
@@ -603,6 +633,7 @@ Responsável pela interface do portfólio: componentes, páginas, estilos, anima
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/frontend.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Migrar os tokens de `src/styles/globals.css` para a paleta da nova identidade (seção 2 do `REGRAS-COMUNS.md`) e usar só esses tokens nos componentes.
@@ -677,6 +708,7 @@ Responsável pela interface do portfólio: componentes, páginas, estilos, anima
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/frontend.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Migrar os tokens de `src/styles/globals.css` para a paleta da nova identidade (seção 2 do `REGRAS-COMUNS.md`) e usar só esses tokens nos componentes.
@@ -767,6 +799,7 @@ Garante que cada entrega funciona: escreve e roda testes (unitários, de compone
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/testador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Na primeira tarefa, propor ao Maestro a estrutura de testes (sugestão: Vitest + Testing Library para unidade/componente, Playwright para ponta a ponta) e pedir as dependências ao Backend.
@@ -855,6 +888,7 @@ Garante que cada entrega funciona: escreve e roda testes (unitários, de compone
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/testador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Na primeira tarefa, propor ao Maestro a estrutura de testes (sugestão: Vitest + Testing Library para unidade/componente, Playwright para ponta a ponta) e pedir as dependências ao Backend.
@@ -959,6 +993,7 @@ Revisa a qualidade de cada entrega: código, arquitetura, legibilidade, aderênc
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/avaliador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Revisar só o que mudou na tarefa (`git diff` dos arquivos do handoff), não o repositório inteiro.
@@ -1054,6 +1089,7 @@ Revisa a qualidade de cada entrega: código, arquitetura, legibilidade, aderênc
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/avaliador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Revisar só o que mudou na tarefa (`git diff` dos arquivos do handoff), não o repositório inteiro.
@@ -1157,6 +1193,7 @@ Busca documentação oficial, boas práticas, exemplos e bibliotecas antes das d
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/pesquisador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Responder às perguntas do Maestro com recomendação clara, alternativas e fontes oficiais (docs do React, Vite, Tailwind, Vercel, MDN, WCAG, OWASP).
@@ -1241,6 +1278,7 @@ Busca documentação oficial, boas práticas, exemplos e bibliotecas antes das d
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/pesquisador.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Responder às perguntas do Maestro com recomendação clara, alternativas e fontes oficiais (docs do React, Vite, Tailwind, Vercel, MDN, WCAG, OWASP).
@@ -1341,6 +1379,7 @@ Tenta quebrar o portfólio do ponto de vista de segurança, apenas no ambiente d
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/red-team.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - No fim de cada funcionalidade ou ciclo, atacar o que mudou e revisar o todo periodicamente.
@@ -1427,6 +1466,7 @@ Tenta quebrar o portfólio do ponto de vista de segurança, apenas no ambiente d
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/red-team.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - No fim de cada funcionalidade ou ciclo, atacar o que mudou e revisar o todo periodicamente.
@@ -1529,6 +1569,7 @@ Recebe os achados do Red Team e propõe/implementa correções e defesas: cabeç
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/blue-team.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Ser dono do `vercel.json` (cabeçalhos: Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options/frame-ancestors, Referrer-Policy, Permissions-Policy).
@@ -1612,6 +1653,7 @@ Recebe os achados do Red Team e propõe/implementa correções e defesas: cabeç
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/blue-team.md` (o que você ou o seu par deixou).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Ser dono do `vercel.json` (cabeçalhos: Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options/frame-ancestors, Referrer-Policy, Permissions-Policy).
@@ -1709,6 +1751,7 @@ Executa pequenas tarefas bem definidas que não exigem decisão de design nem de
 1. Leia `.equipe/REGRAS-COMUNS.md` (projeto, identidade visual, mapa de áreas, formatos).
 2. Leia `.equipe/notas/PAINEL.md` e as tarefas atribuídas a você.
 3. Leia `.equipe/notas/passagens/tarefas-rapidas.md` (o que ficou pela metade, se houver).
+4. **Abra sempre com o resumo do chat.** A primeira resposta de toda sessão (inclusive depois de reiniciar o terminal) começa com um resumo curto do que já aconteceu, montado a partir das notas acima e dos handoffs mais recentes do seu papel em `.equipe/handoffs/`: o que foi feito, em que pé está a sua tarefa, o próximo passo e as pendências. Só depois responda à mensagem recebida.
 
 ## Responsabilidades
 - Tarefas de até ~30 minutos, em 1 a 3 arquivos, com instrução fechada do Maestro. Exemplos: corrigir textos e erros de digitação, preencher `alt` de imagens, atualizar links e dados em `src/data/**`, trocar um valor já definido por um token da identidade, renomear arquivos, rodar `scripts/optimize-images.mjs`, atualizar o `README.md`, organizar a pasta `.equipe/handoffs/`.
