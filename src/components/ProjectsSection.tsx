@@ -20,7 +20,7 @@ export default function ProjectsSection() {
       style={{
         padding: '6rem 1.5rem',
         position: 'relative',
-        background: 'linear-gradient(180deg, transparent 0%, rgba(18,18,26,0.3) 50%, transparent 100%)',
+        background: 'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-surface) 30%, transparent) 50%, transparent 100%)',
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -34,24 +34,24 @@ export default function ProjectsSection() {
         >
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px', padding: '0.3rem 0.9rem',
-            fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)',
+            fontSize: '0.72rem', fontWeight: 700, color: 'var(--color-text-muted)',
             letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem',
           }}>
             Vitrine de soluções
           </div>
 
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-            fontWeight: 700, color: '#fff', letterSpacing: '-0.025em', marginBottom: '1rem',
+            fontWeight: 700, color: 'var(--color-text)', letterSpacing: '-0.025em', marginBottom: '1rem',
           }}>
             Projetos prontos para{' '}
             <span className="gradient-text">acelerar sua operação</span>
           </h2>
 
-          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.75 }}>
             Soluções já construídas, testadas e prontas para serem adaptadas ao fluxo real da sua empresa.
             Escolha uma base pronta ou solicite um sistema sob medida com o padrão Nexus Labs.
           </p>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528 528">
+  <rect width="528" height="528" rx="64" fill="#0B0A12" />
+  <svg role="img" aria-label="Nexus Labs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="24" y="139" width="480" height="250" viewBox="0 0 396 206.87999">
+<defs>
+<g>
+<g id="logo-icone-nx-fundo-escuro-glyph-0-0">
+<path d="M 18.890625 0 L 18.890625 -188.890625 L 62.875 -188.890625 L 167.03125 -63.140625 L 146.25 -63.140625 L 146.25 -188.890625 L 198.609375 -188.890625 L 198.609375 0 L 154.625 0 L 50.453125 -125.75 L 71.234375 -125.75 L 71.234375 0 Z M 18.890625 0 "/>
+</g>
+<g id="logo-icone-nx-fundo-escuro-glyph-0-1">
+<path d="M -0.546875 0 L 82.03125 -114.6875 L 81.765625 -76.640625 L 2.421875 -188.890625 L 62.609375 -188.890625 L 113.328125 -115.765625 L 87.703125 -115.5 L 137.625 -188.890625 L 195.359375 -188.890625 L 116.03125 -78.796875 L 116.03125 -116.578125 L 199.6875 0 L 138.15625 0 L 86.625 -76.90625 L 111.171875 -76.90625 L 60.4375 0 Z M -0.546875 0 "/>
+</g>
+</g>
+<clipPath id="logo-icone-nx-fundo-escuro-clip-0">
+<path clip-rule="nonzero" d="M 203 11 L 395.882812 11 L 395.882812 201 L 203 201 Z M 203 11 "/>
+</clipPath>
+</defs>
+<g fill="rgb(95.689392%, 95.289612%, 97.24884%)" fill-opacity="1">
+<use xlink:href="#logo-icone-nx-fundo-escuro-glyph-0-0" x="3.113053" y="200.133895"/>
+</g>
+<g clip-path="url(#logo-icone-nx-fundo-escuro-clip-0)">
+<g fill="rgb(54.508972%, 36.079407%, 96.469116%)" fill-opacity="1">
+<use xlink:href="#logo-icone-nx-fundo-escuro-glyph-0-1" x="204.418143" y="200.133895"/>
+</g>
+</g>
+</svg>
+</svg>

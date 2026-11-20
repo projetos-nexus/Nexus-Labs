@@ -33,10 +33,10 @@ type Tab = typeof TABS[number]
 const TAB_DATA: Record<Tab, TabData> = {
   'Visão Geral': {
     metrics: [
-      { label: 'Receita Mês',        value: 'R$ 284.950', sub: '+18.2%',        positive: true,  icon: TrendingUp,  color: '#7B5CFF' },
-      { label: 'Leads Qualificados', value: '127',         sub: '+34 novos',     positive: true,  icon: Users,       color: '#4DA3FF' },
-      { label: 'Tickets Fechados',   value: '89%',         sub: 'dentro do SLA', positive: true,  icon: CheckCircle, color: '#4ADE80' },
-      { label: 'Custo Operacional',  value: 'R$ 42.100',   sub: '−5.3%',         positive: true,  icon: DollarSign,  color: '#9B82FF' },
+      { label: 'Receita Mês',        value: 'R$ 284.950', sub: '+18.2%',        positive: true,  icon: TrendingUp,  color: 'var(--color-roxo)' },
+      { label: 'Leads Qualificados', value: '127',         sub: '+34 novos',     positive: true,  icon: Users,       color: 'var(--color-lilas-mid)' },
+      { label: 'Tickets Fechados',   value: '89%',         sub: 'dentro do SLA', positive: true,  icon: CheckCircle, color: 'var(--color-lilas)' },
+      { label: 'Custo Operacional',  value: 'R$ 42.100',   sub: '−5.3%',         positive: true,  icon: DollarSign,  color: 'var(--color-lilas)' },
     ],
     chartTitle: 'Receita × Custo — Últimos 6 meses',
     chartLegend: ['Receita', 'Custo'],
@@ -51,10 +51,10 @@ const TAB_DATA: Record<Tab, TabData> = {
   },
   'Operacional': {
     metrics: [
-      { label: 'Pedidos Ativos',  value: '342', sub: '+27 hoje',   positive: true,  icon: Package,      color: '#4DA3FF' },
-      { label: 'Em Produção',     value: '86',  sub: 'tempo real', positive: null,  icon: Factory,      color: '#9B82FF' },
-      { label: 'Carregamentos',   value: '41',  sub: 'hoje',       positive: null,  icon: Truck,        color: '#7B5CFF' },
-      { label: 'Pendências',      value: '12',  sub: 'atenção',    positive: false, icon: AlertCircle,  color: '#F87171' },
+      { label: 'Pedidos Ativos',  value: '342', sub: '+27 hoje',   positive: true,  icon: Package,      color: 'var(--color-lilas-mid)' },
+      { label: 'Em Produção',     value: '86',  sub: 'tempo real', positive: null,  icon: Factory,      color: 'var(--color-lilas)' },
+      { label: 'Carregamentos',   value: '41',  sub: 'hoje',       positive: null,  icon: Truck,        color: 'var(--color-roxo)' },
+      { label: 'Pendências',      value: '12',  sub: 'atenção',    positive: false, icon: AlertCircle,  color: 'var(--color-text-muted)' },
     ],
     chartTitle: 'Fluxo operacional — Últimos 6 meses',
     chartLegend: ['Pedidos', 'Concluídos'],
@@ -69,10 +69,10 @@ const TAB_DATA: Record<Tab, TabData> = {
   },
   'Financeiro': {
     metrics: [
-      { label: 'Faturamento',   value: 'R$ 487.290', sub: '+12.4%',     positive: true,  icon: TrendingUp,   color: '#4ADE80' },
-      { label: 'Recebíveis',    value: 'R$ 138.700', sub: 'previsto',   positive: null,  icon: Receipt,      color: '#4DA3FF' },
-      { label: 'Inadimplência', value: '2.1%',        sub: 'controlado', positive: true,  icon: TrendingDown, color: '#9B82FF' },
-      { label: 'Margem',        value: '31%',          sub: '+4.8%',      positive: true,  icon: DollarSign,   color: '#7B5CFF' },
+      { label: 'Faturamento',   value: 'R$ 487.290', sub: '+12.4%',     positive: true,  icon: TrendingUp,   color: 'var(--color-lilas)' },
+      { label: 'Recebíveis',    value: 'R$ 138.700', sub: 'previsto',   positive: null,  icon: Receipt,      color: 'var(--color-lilas-mid)' },
+      { label: 'Inadimplência', value: '2.1%',        sub: 'controlado', positive: true,  icon: TrendingDown, color: 'var(--color-lilas)' },
+      { label: 'Margem',        value: '31%',          sub: '+4.8%',      positive: true,  icon: DollarSign,   color: 'var(--color-roxo)' },
     ],
     chartTitle: 'Performance financeira — Últimos 6 meses',
     chartLegend: ['Faturamento', 'Recebíveis'],
@@ -87,10 +87,10 @@ const TAB_DATA: Record<Tab, TabData> = {
   },
   'IA': {
     metrics: [
-      { label: 'Automações Ativas',  value: '18',    sub: 'online',     positive: true, icon: Zap,          color: '#7B5CFF' },
-      { label: 'Msgs Processadas',   value: '4.892', sub: 'este mês',   positive: true, icon: MessageSquare, color: '#4DA3FF' },
-      { label: 'Tempo Economizado',  value: '126h',  sub: 'estimado',   positive: true, icon: Clock,        color: '#9B82FF' },
-      { label: 'Agentes IA',         value: '3',     sub: 'ativos',     positive: null, icon: Cpu,          color: '#4ADE80' },
+      { label: 'Automações Ativas',  value: '18',    sub: 'online',     positive: true, icon: Zap,          color: 'var(--color-roxo)' },
+      { label: 'Msgs Processadas',   value: '4.892', sub: 'este mês',   positive: true, icon: MessageSquare, color: 'var(--color-lilas-mid)' },
+      { label: 'Tempo Economizado',  value: '126h',  sub: 'estimado',   positive: true, icon: Clock,        color: 'var(--color-lilas)' },
+      { label: 'Agentes IA',         value: '3',     sub: 'ativos',     positive: null, icon: Cpu,          color: 'var(--color-lilas)' },
     ],
     chartTitle: 'Automações e IA — Últimos 6 meses',
     chartLegend: ['Mensagens', 'Horas econ.'],
@@ -122,17 +122,17 @@ function BarChart({ data, legend, tabKey }: { data: ChartMonth[]; legend: [strin
             left: 0, right: 0,
             bottom: `calc(20px + ${pct / 100 * CHART_H}px)`,
             height: '1px',
-            background: 'rgba(255,255,255,0.04)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)',
           }} />
         ))}
       </div>
 
       {/* Legend */}
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '0.6rem' }}>
-        {[{ c: '#7B5CFF', l: legend[0] }, { c: '#4DA3FF', l: legend[1] }].map(({ c, l }) => (
+        {[{ c: 'var(--color-roxo)', l: legend[0] }, { c: 'var(--color-lilas-mid)', l: legend[1] }].map(({ c, l }) => (
           <div key={l} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
             <div style={{ width: '8px', height: '8px', borderRadius: '2px', background: c }} />
-            <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>{l}</span>
+            <span style={{ fontSize: '0.62rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>{l}</span>
           </div>
         ))}
       </div>
@@ -157,22 +157,22 @@ function BarChart({ data, legend, tabKey }: { data: ChartMonth[]; legend: [strin
                   style={{
                     position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)',
                     marginBottom: '8px', zIndex: 20,
-                    background: 'rgba(18,18,26,0.98)',
-                    border: '1px solid rgba(255,255,255,0.14)',
+                    background: 'color-mix(in srgb, var(--color-surface) 98%, transparent)',
+                    border: '1px solid color-mix(in srgb, var(--color-text) 14%, transparent)',
                     borderRadius: '9px', padding: '0.5rem 0.7rem',
                     fontSize: '0.65rem', whiteSpace: 'nowrap',
-                    boxShadow: '0 12px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(123,92,255,0.1)',
+                    boxShadow: '0 12px 32px color-mix(in srgb, var(--color-bg) 60%, transparent), 0 0 0 1px color-mix(in srgb, var(--color-roxo) 10%, transparent)',
                     pointerEvents: 'none',
                   }}
                 >
-                  <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 700, color: '#fff', marginBottom: '4px', fontSize: '0.68rem' }}>{d.month}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--color-text)', marginBottom: '4px', fontSize: '0.68rem' }}>{d.month}</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', marginBottom: '2px' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '2px', background: '#7B5CFF', flexShrink: 0 }} />
-                    <span style={{ color: 'rgba(255,255,255,0.7)' }}>{d.aLabel}</span>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '2px', background: 'var(--color-roxo)', flexShrink: 0 }} />
+                    <span style={{ color: 'var(--color-text-muted)' }}>{d.aLabel}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '2px', background: '#4DA3FF', flexShrink: 0 }} />
-                    <span style={{ color: 'rgba(255,255,255,0.7)' }}>{d.bLabel}</span>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '2px', background: 'var(--color-lilas-mid)', flexShrink: 0 }} />
+                    <span style={{ color: 'var(--color-text-muted)' }}>{d.bLabel}</span>
                   </div>
                 </motion.div>
               )}
@@ -191,10 +191,10 @@ function BarChart({ data, legend, tabKey }: { data: ChartMonth[]; legend: [strin
                   borderRadius: '4px 4px 0 0',
                   transformOrigin: 'bottom',
                   background: hov === i
-                    ? 'linear-gradient(180deg, #B09FFF 0%, #7B5CFF 100%)'
-                    : 'linear-gradient(180deg, rgba(123,92,255,0.9) 0%, rgba(123,92,255,0.4) 100%)',
+                    ? 'linear-gradient(180deg, var(--color-lilas) 0%, var(--color-roxo) 100%)'
+                    : 'linear-gradient(180deg, color-mix(in srgb, var(--color-roxo) 90%, transparent) 0%, color-mix(in srgb, var(--color-roxo) 40%, transparent) 100%)',
                   transition: 'background 0.2s',
-                  boxShadow: hov === i ? '0 0 12px rgba(123,92,255,0.5)' : 'none',
+                  boxShadow: hov === i ? '0 0 12px color-mix(in srgb, var(--color-roxo) 50%, transparent)' : 'none',
                 }}
               />
               <motion.div
@@ -208,10 +208,10 @@ function BarChart({ data, legend, tabKey }: { data: ChartMonth[]; legend: [strin
                   borderRadius: '4px 4px 0 0',
                   transformOrigin: 'bottom',
                   background: hov === i
-                    ? 'linear-gradient(180deg, #7BBFFF 0%, #4DA3FF 100%)'
-                    : 'linear-gradient(180deg, rgba(77,163,255,0.65) 0%, rgba(77,163,255,0.25) 100%)',
+                    ? 'linear-gradient(180deg, var(--color-lilas) 0%, var(--color-lilas-mid) 100%)'
+                    : 'linear-gradient(180deg, color-mix(in srgb, var(--color-lilas-mid) 65%, transparent) 0%, color-mix(in srgb, var(--color-lilas-mid) 25%, transparent) 100%)',
                   transition: 'background 0.2s',
-                  boxShadow: hov === i ? '0 0 12px rgba(77,163,255,0.4)' : 'none',
+                  boxShadow: hov === i ? '0 0 12px color-mix(in srgb, var(--color-lilas-mid) 40%, transparent)' : 'none',
                 }}
               />
             </div>
@@ -219,7 +219,7 @@ function BarChart({ data, legend, tabKey }: { data: ChartMonth[]; legend: [strin
             {/* Month label */}
             <span style={{
               fontSize: '0.58rem',
-              color: hov === i ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.22)',
+              color: hov === i ? 'var(--color-text)' : 'var(--color-text-muted)',
               marginTop: '5px',
               transition: 'color 0.2s',
               fontWeight: hov === i ? 600 : 400,
@@ -243,18 +243,18 @@ export default function InteractiveDashboardMockup() {
 
   return (
     <motion.div
-      whileHover={{ boxShadow: '0 0 0 1px rgba(123,92,255,0.2), 0 0 60px rgba(123,92,255,0.08), 0 24px 64px rgba(0,0,0,0.5)' }}
+      whileHover={{ boxShadow: '0 0 0 1px color-mix(in srgb, var(--color-roxo) 20%, transparent), 0 0 60px color-mix(in srgb, var(--color-roxo) 8%, transparent), 0 24px 64px color-mix(in srgb, var(--color-bg) 50%, transparent)' }}
       transition={{ duration: 0.3 }}
       style={{
-        background: 'rgba(13,13,20,0.97)',
-        border: '1px solid rgba(255,255,255,0.1)',
+        background: 'color-mix(in srgb, var(--color-surface-alt) 97%, transparent)',
+        border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
         borderRadius: '18px',
         overflow: 'hidden',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
         boxShadow: isAI
-          ? '0 0 0 1px rgba(123,92,255,0.15), 0 0 48px rgba(123,92,255,0.1), 0 20px 60px rgba(0,0,0,0.5)'
-          : '0 0 0 1px rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.5)',
+          ? '0 0 0 1px color-mix(in srgb, var(--color-roxo) 15%, transparent), 0 0 48px color-mix(in srgb, var(--color-roxo) 10%, transparent), 0 20px 60px color-mix(in srgb, var(--color-bg) 50%, transparent)'
+          : '0 0 0 1px color-mix(in srgb, var(--color-text) 4%, transparent), 0 20px 60px color-mix(in srgb, var(--color-bg) 50%, transparent)',
         position: 'relative',
         transition: 'box-shadow 0.4s ease',
       }}
@@ -263,8 +263,8 @@ export default function InteractiveDashboardMockup() {
       <div style={{
         height: '2px',
         background: isAI
-          ? 'linear-gradient(90deg, #7B5CFF, #9B82FF, #4DA3FF)'
-          : 'linear-gradient(90deg, transparent 0%, #7B5CFF 35%, #4DA3FF 65%, transparent 100%)',
+          ? 'linear-gradient(90deg, var(--color-roxo), var(--color-lilas), var(--color-lilas-mid))'
+          : 'linear-gradient(90deg, transparent 0%, var(--color-roxo) 35%, var(--color-lilas-mid) 65%, transparent 100%)',
         opacity: isAI ? 1 : 0.7,
         transition: 'all 0.4s',
       }} />
@@ -273,7 +273,7 @@ export default function InteractiveDashboardMockup() {
       <div aria-hidden="true" style={{
         position: 'absolute', top: 2, left: '50%', transform: 'translateX(-50%)',
         width: '60%', height: '1px',
-        background: 'linear-gradient(90deg, transparent, rgba(123,92,255,0.4), transparent)',
+        background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-roxo) 40%, transparent), transparent)',
         pointerEvents: 'none',
       }} />
 
@@ -281,27 +281,27 @@ export default function InteractiveDashboardMockup() {
       <div style={{
         display: 'flex', alignItems: 'center', gap: '0.5rem',
         padding: '0.65rem 1.1rem',
-        background: 'rgba(0,0,0,0.3)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'color-mix(in srgb, var(--color-bg) 30%, transparent)',
+        borderBottom: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
       }}>
         {[1, 2, 3].map(n => (
-          <div key={n} style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', flexShrink: 0 }} />
+          <div key={n} style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'color-mix(in srgb, var(--color-text) 10%, transparent)', flexShrink: 0 }} />
         ))}
         <div style={{
           flex: 1, height: '22px', marginLeft: '0.5rem',
-          background: 'rgba(255,255,255,0.04)', borderRadius: '5px',
+          background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', borderRadius: '5px',
           display: 'flex', alignItems: 'center', paddingLeft: '0.65rem',
         }}>
-          <span style={{ fontSize: '0.63rem', color: 'rgba(255,255,255,0.2)' }}>
+          <span style={{ fontSize: '0.63rem', color: 'var(--color-text-muted)' }}>
             app.nexuslabs.com.br — Nexus Command Center
           </span>
         </div>
         <div style={{
           fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.07em',
-          color: 'rgba(155,130,255,0.7)',
+          color: 'var(--color-lilas)',
           padding: '0.18rem 0.5rem',
-          border: '1px solid rgba(123,92,255,0.22)',
-          borderRadius: '4px', background: 'rgba(123,92,255,0.08)',
+          border: '1px solid color-mix(in srgb, var(--color-roxo) 22%, transparent)',
+          borderRadius: '4px', background: 'color-mix(in srgb, var(--color-roxo) 8%, transparent)',
           flexShrink: 0,
         }}>
           NEXUS OS
@@ -321,11 +321,11 @@ export default function InteractiveDashboardMockup() {
             <motion.div
               onHoverStart={() => setLogoHov(true)}
               onHoverEnd={() => setLogoHov(false)}
-              animate={{ boxShadow: logoHov ? '0 0 20px rgba(123,92,255,0.5)' : '0 0 8px rgba(123,92,255,0.15)' }}
+              animate={{ boxShadow: logoHov ? '0 0 20px color-mix(in srgb, var(--color-roxo) 50%, transparent)' : '0 0 8px color-mix(in srgb, var(--color-roxo) 15%, transparent)' }}
               style={{
                 width: '40px', height: '40px', borderRadius: '11px', flexShrink: 0,
-                background: 'linear-gradient(135deg, rgba(123,92,255,0.25) 0%, rgba(77,163,255,0.15) 100%)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-roxo) 25%, transparent) 0%, color-mix(in srgb, var(--color-lilas-mid) 15%, transparent) 100%)',
+                border: '1px solid color-mix(in srgb, var(--color-text) 12%, transparent)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 overflow: 'hidden', cursor: 'default',
               }}
@@ -334,13 +334,13 @@ export default function InteractiveDashboardMockup() {
             </motion.div>
             <div>
               <div style={{
-                fontFamily: '"Space Grotesk", sans-serif',
-                fontSize: '0.86rem', fontWeight: 700, color: '#fff',
+                fontFamily: 'var(--font-display)',
+                fontSize: '0.86rem', fontWeight: 700, color: 'var(--color-text)',
                 lineHeight: 1.2, letterSpacing: '-0.01em',
               }}>
                 Nexus Command Center
               </div>
-              <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.35)', marginTop: '1px' }}>
+              <div style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)', marginTop: '1px' }}>
                 Visão executiva em tempo real
               </div>
             </div>
@@ -354,8 +354,8 @@ export default function InteractiveDashboardMockup() {
                 animate={{ opacity: 1, scale: 1 }}
                 style={{
                   fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.05em',
-                  color: '#9B82FF', background: 'rgba(123,92,255,0.15)',
-                  border: '1px solid rgba(123,92,255,0.3)',
+                  color: 'var(--color-lilas)', background: 'color-mix(in srgb, var(--color-roxo) 15%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-roxo) 30%, transparent)',
                   borderRadius: '5px', padding: '0.18rem 0.45rem',
                   whiteSpace: 'nowrap',
                 }}
@@ -364,18 +364,18 @@ export default function InteractiveDashboardMockup() {
               </motion.div>
             )}
             <div style={{
-              fontSize: '0.58rem', color: 'rgba(255,255,255,0.28)',
-              background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)',
+              fontSize: '0.58rem', color: 'var(--color-text-muted)',
+              background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
               borderRadius: '5px', padding: '0.18rem 0.5rem', whiteSpace: 'nowrap',
             }}>
               Sincronizado agora
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               <div style={{
-                width: '6px', height: '6px', borderRadius: '50%', background: '#4ADE80',
+                width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-lilas)',
                 animation: 'nlPulse 2s ease-in-out infinite',
               }} />
-              <span style={{ fontSize: '0.62rem', color: '#4ADE80', fontWeight: 600 }}>Online</span>
+              <span style={{ fontSize: '0.62rem', color: 'var(--color-lilas)', fontWeight: 600 }}>Online</span>
             </div>
           </div>
         </div>
@@ -383,7 +383,7 @@ export default function InteractiveDashboardMockup() {
         {/* Tabs */}
         <div style={{
           display: 'flex', gap: '2px', overflowX: 'auto',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          borderBottom: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
           marginBottom: '0.9rem',
         }} className="nl-tabs">
           {TABS.map(tab => {
@@ -397,13 +397,13 @@ export default function InteractiveDashboardMockup() {
                   padding: '0.4rem 0.9rem',
                   border: 'none', borderRadius: '6px 6px 0 0',
                   cursor: 'pointer', whiteSpace: 'nowrap',
-                  background: active ? 'rgba(123,92,255,0.1)' : 'transparent',
-                  color: active ? '#C4B5FD' : 'rgba(255,255,255,0.35)',
+                  background: active ? 'color-mix(in srgb, var(--color-roxo) 10%, transparent)' : 'transparent',
+                  color: active ? 'var(--color-lilas)' : 'var(--color-text-muted)',
                   position: 'relative', bottom: '-1px',
                   transition: 'all 0.2s',
                 }}
-                onMouseEnter={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.65)' }}
-                onMouseLeave={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.35)' }}
+                onMouseEnter={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-text)' }}
+                onMouseLeave={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)' }}
               >
                 {tab}
                 {active && (
@@ -411,7 +411,7 @@ export default function InteractiveDashboardMockup() {
                     layoutId="tab-indicator"
                     style={{
                       position: 'absolute', bottom: 0, left: 0, right: 0, height: '2px',
-                      background: 'linear-gradient(90deg, #7B5CFF, #4DA3FF)',
+                      background: 'linear-gradient(90deg, var(--color-roxo), var(--color-lilas-mid))',
                       borderRadius: '2px 2px 0 0',
                     }}
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
@@ -422,8 +422,8 @@ export default function InteractiveDashboardMockup() {
           })}
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', paddingBottom: '4px' }}>
             <span style={{
-              fontSize: '0.56rem', color: 'rgba(255,255,255,0.22)',
-              background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)',
+              fontSize: '0.56rem', color: 'var(--color-text-muted)',
+              background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
               borderRadius: '4px', padding: '0.15rem 0.4rem', whiteSpace: 'nowrap',
             }}>
               Tempo real
@@ -452,37 +452,37 @@ export default function InteractiveDashboardMockup() {
                   transition={{ duration: 0.28, delay: i * 0.05 }}
                   whileHover={{ y: -2, transition: { duration: 0.15 } }}
                   style={{
-                    background: `radial-gradient(ellipse at top left, ${m.color}0a 0%, rgba(18,18,26,0.9) 70%)`,
-                    border: '1px solid rgba(255,255,255,0.07)',
+                    background: `radial-gradient(ellipse at top left, color-mix(in srgb, ${m.color} 3.9%, transparent) 0%, color-mix(in srgb, var(--color-surface) 90%, transparent) 70%)`,
+                    border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
                     borderRadius: '11px', padding: '0.75rem 0.8rem',
                     position: 'relative', overflow: 'hidden',
                     cursor: 'default',
                   }}
                   onHoverStart={e => {
                     const el = (e.target as HTMLElement).closest('[data-metric]') as HTMLElement
-                    if (el) el.style.borderColor = `${m.color}40`
+                    if (el) el.style.borderColor = `color-mix(in srgb, ${m.color} 25.1%, transparent)`
                   }}
                   onHoverEnd={e => {
                     const el = (e.target as HTMLElement).closest('[data-metric]') as HTMLElement
-                    if (el) el.style.borderColor = 'rgba(255,255,255,0.07)'
+                    if (el) el.style.borderColor = 'color-mix(in srgb, var(--color-text) 7%, transparent)'
                   }}
                   data-metric
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.45rem' }}>
-                    <span style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500, lineHeight: 1.3, maxWidth: '80%' }}>
+                    <span style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)', fontWeight: 500, lineHeight: 1.3, maxWidth: '80%' }}>
                       {m.label}
                     </span>
                     <div style={{
                       width: '22px', height: '22px', borderRadius: '6px', flexShrink: 0,
-                      background: `${m.color}15`,
+                      background: `color-mix(in srgb, ${m.color} 8.2%, transparent)`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
                       <Icon size={11} color={m.color} />
                     </div>
                   </div>
                   <div style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
-                    fontSize: '1rem', fontWeight: 800, color: '#fff',
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1rem', fontWeight: 800, color: 'var(--color-text)',
                     lineHeight: 1, marginBottom: '0.28rem',
                     letterSpacing: '-0.02em',
                   }}>
@@ -490,7 +490,7 @@ export default function InteractiveDashboardMockup() {
                   </div>
                   <div style={{
                     fontSize: '0.6rem', fontWeight: 600,
-                    color: m.positive === true ? '#4ADE80' : m.positive === false ? '#F87171' : m.color,
+                    color: m.positive === true ? 'var(--color-lilas)' : m.positive === false ? 'var(--color-text-muted)' : m.color,
                   }}>
                     {m.sub}
                   </div>
@@ -509,15 +509,15 @@ export default function InteractiveDashboardMockup() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: `1px solid ${isAI ? 'rgba(123,92,255,0.15)' : 'rgba(255,255,255,0.06)'}`,
+              background: 'color-mix(in srgb, var(--color-text) 2%, transparent)',
+              border: `1px solid ${isAI ? 'color-mix(in srgb, var(--color-roxo) 15%, transparent)' : 'color-mix(in srgb, var(--color-text) 6%, transparent)'}`,
               borderRadius: '11px', padding: '0.85rem',
               transition: 'border-color 0.4s',
             }}
           >
             <div className="nl-chart-title" style={{
-              fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: '0.66rem', color: 'rgba(255,255,255,0.45)',
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.66rem', color: 'var(--color-text-muted)',
               marginBottom: '0.6rem', fontWeight: 600, letterSpacing: '0.01em',
             }}>
               {data.chartTitle}
@@ -530,14 +530,14 @@ export default function InteractiveDashboardMockup() {
       {/* Bottom fade */}
       <div aria-hidden="true" style={{
         position: 'absolute', bottom: 0, left: 0, right: 0, height: '28px',
-        background: 'linear-gradient(transparent, rgba(11,11,15,0.35))',
+        background: 'linear-gradient(transparent, color-mix(in srgb, var(--color-bg) 35%, transparent))',
         pointerEvents: 'none', borderRadius: '0 0 18px 18px',
       }} />
 
       <style>{`
         @keyframes nlPulse {
-          0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); }
-          50%      { opacity:0.7; box-shadow:0 0 0 4px rgba(74,222,128,0); }
+          0%,100% { opacity:1; box-shadow:0 0 0 0 color-mix(in srgb, var(--color-lilas) 40%, transparent); }
+          50%      { opacity:0.7; box-shadow:0 0 0 4px transparent; }
         }
         .nl-tabs { scrollbar-width:none; -ms-overflow-style:none; }
         .nl-tabs::-webkit-scrollbar { display:none; }

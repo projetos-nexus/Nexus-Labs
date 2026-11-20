@@ -21,10 +21,10 @@ function MiniDashboardPreview() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', height: '100%' }}>
       {/* Top bar */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)' }}>Dashboard Executivo</span>
+        <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--color-text-muted)' }}>Dashboard Executivo</span>
         <div style={{
-          fontSize: '0.55rem', fontWeight: 700, color: '#4ADE80',
-          background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)',
+          fontSize: '0.55rem', fontWeight: 700, color: 'var(--color-lilas)',
+          background: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--color-lilas) 20%, transparent)',
           borderRadius: '4px', padding: '0.1rem 0.4rem',
         }}>
           Tempo real
@@ -35,23 +35,23 @@ function MiniDashboardPreview() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.4rem' }}>
         {kpis.map((k) => (
           <div key={k.label} style={{
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
             borderRadius: '7px', padding: '0.45rem 0.5rem',
           }}>
-            <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.35)', marginBottom: '0.2rem' }}>{k.label}</div>
-            <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem', fontWeight: 700, color: '#fff' }}>{k.value}</div>
-            <div style={{ fontSize: '0.55rem', color: '#4ADE80', fontWeight: 600 }}>↑</div>
+            <div style={{ fontSize: '0.55rem', color: 'var(--color-text-muted)', marginBottom: '0.2rem' }}>{k.label}</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, color: 'var(--color-text)' }}>{k.value}</div>
+            <div style={{ fontSize: '0.55rem', color: 'var(--color-lilas)', fontWeight: 600 }}>↑</div>
           </div>
         ))}
       </div>
 
       {/* Chart */}
       <div style={{
-        flex: 1, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
+        flex: 1, background: 'color-mix(in srgb, var(--color-text) 2%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
         borderRadius: '8px', padding: '0.6rem 0.7rem',
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
       }}>
-        <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)', marginBottom: '0.4rem' }}>Receita × Custo</div>
+        <div style={{ fontSize: '0.55rem', color: 'var(--color-text-muted)', marginBottom: '0.4rem' }}>Receita × Custo</div>
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: '4px', flex: 1 }}>
           {bars.map((h, i) => (
             <motion.div
@@ -65,18 +65,18 @@ function MiniDashboardPreview() {
                 borderRadius: '3px 3px 0 0',
                 transformOrigin: 'bottom',
                 background: i === bars.length - 1
-                  ? 'linear-gradient(180deg, #9B82FF, #7B5CFF)'
-                  : 'linear-gradient(180deg, rgba(123,92,255,0.7), rgba(123,92,255,0.3))',
+                  ? 'linear-gradient(180deg, var(--color-lilas), var(--color-roxo))'
+                  : 'linear-gradient(180deg, color-mix(in srgb, var(--color-roxo) 70%, transparent), color-mix(in srgb, var(--color-roxo) 30%, transparent))',
                 minHeight: '4px',
               }}
             />
           ))}
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.4rem' }}>
-          {[{ c: '#7B5CFF', l: 'Receita' }, { c: '#4DA3FF', l: 'Meta' }].map(({ c, l }) => (
+          {[{ c: 'var(--color-roxo)', l: 'Receita' }, { c: 'var(--color-lilas-mid)', l: 'Meta' }].map(({ c, l }) => (
             <div key={l} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '2px', background: c }} />
-              <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)' }}>{l}</span>
+              <span style={{ fontSize: '0.55rem', color: 'var(--color-text-muted)' }}>{l}</span>
             </div>
           ))}
         </div>
@@ -89,25 +89,25 @@ function MiniDashboardPreview() {
 
 function MiniOperationsPreview() {
   const orders = [
-    { id: '#4821', client: 'Empresa A', stage: 'Em produção', color: '#4DA3FF', pct: 65 },
-    { id: '#4820', client: 'Empresa B', stage: 'Concluído',   color: '#4ADE80', pct: 100 },
-    { id: '#4819', client: 'Empresa C', stage: 'Aguardando',  color: '#F59E0B', pct: 20 },
-    { id: '#4818', client: 'Empresa D', stage: 'Em produção', color: '#4DA3FF', pct: 82 },
+    { id: '#4821', client: 'Empresa A', stage: 'Em produção', color: 'var(--color-lilas-mid)', pct: 65 },
+    { id: '#4820', client: 'Empresa B', stage: 'Concluído',   color: 'var(--color-lilas)', pct: 100 },
+    { id: '#4819', client: 'Empresa C', stage: 'Aguardando',  color: 'var(--color-text-muted)', pct: 20 },
+    { id: '#4818', client: 'Empresa D', stage: 'Em produção', color: 'var(--color-lilas-mid)', pct: 82 },
   ]
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', height: '100%' }}>
       {/* Top bar */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)' }}>Gestão Operacional</span>
+        <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--color-text-muted)' }}>Gestão Operacional</span>
         <div style={{ display: 'flex', gap: '0.3rem' }}>
           {[
-            { label: '8 ativos', color: '#4DA3FF' },
-            { label: '3 pendentes', color: '#F59E0B' },
+            { label: '8 ativos', color: 'var(--color-lilas-mid)' },
+            { label: '3 pendentes', color: 'var(--color-text-muted)' },
           ].map(({ label, color }) => (
             <div key={label} style={{
               fontSize: '0.52rem', fontWeight: 600, color,
-              background: `${color}15`, border: `1px solid ${color}30`,
+              background: `color-mix(in srgb, ${color} 8.2%, transparent)`, border: `1px solid color-mix(in srgb, ${color} 18.8%, transparent)`,
               borderRadius: '4px', padding: '0.1rem 0.35rem',
             }}>
               {label}
@@ -120,10 +120,10 @@ function MiniOperationsPreview() {
       <div style={{
         display: 'grid', gridTemplateColumns: '1fr 1.5fr 1fr',
         padding: '0.25rem 0.5rem',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
       }}>
         {['Pedido', 'Etapa', 'Progresso'].map(h => (
-          <span key={h} style={{ fontSize: '0.52rem', color: 'rgba(255,255,255,0.28)', fontWeight: 600, letterSpacing: '0.05em' }}>{h}</span>
+          <span key={h} style={{ fontSize: '0.52rem', color: 'var(--color-text-muted)', fontWeight: 600, letterSpacing: '0.05em' }}>{h}</span>
         ))}
       </div>
 
@@ -138,19 +138,19 @@ function MiniOperationsPreview() {
             style={{
               display: 'grid', gridTemplateColumns: '1fr 1.5fr 1fr',
               alignItems: 'center',
-              background: 'rgba(255,255,255,0.025)', borderRadius: '6px',
+              background: 'color-mix(in srgb, var(--color-text) 2.5%, transparent)', borderRadius: '6px',
               padding: '0.35rem 0.5rem',
-              border: '1px solid rgba(255,255,255,0.05)',
+              border: '1px solid color-mix(in srgb, var(--color-text) 5%, transparent)',
             }}
           >
             <div>
-              <div style={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff' }}>{o.id}</div>
-              <div style={{ fontSize: '0.52rem', color: 'rgba(255,255,255,0.3)' }}>{o.client}</div>
+              <div style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--color-text)' }}>{o.id}</div>
+              <div style={{ fontSize: '0.52rem', color: 'var(--color-text-muted)' }}>{o.client}</div>
             </div>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
               fontSize: '0.55rem', fontWeight: 600, color: o.color,
-              background: `${o.color}15`, borderRadius: '4px', padding: '0.15rem 0.4rem',
+              background: `color-mix(in srgb, ${o.color} 8.2%, transparent)`, borderRadius: '4px', padding: '0.15rem 0.4rem',
               width: 'fit-content',
             }}>
               {o.stage === 'Concluído' && <CheckCircle size={9} />}
@@ -159,7 +159,7 @@ function MiniOperationsPreview() {
               {o.stage}
             </div>
             <div>
-              <div style={{ height: '4px', background: 'rgba(255,255,255,0.08)', borderRadius: '2px', overflow: 'hidden' }}>
+              <div style={{ height: '4px', background: 'color-mix(in srgb, var(--color-text) 8%, transparent)', borderRadius: '2px', overflow: 'hidden' }}>
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${o.pct}%` }}
@@ -167,7 +167,7 @@ function MiniOperationsPreview() {
                   style={{ height: '100%', background: o.color, borderRadius: '2px' }}
                 />
               </div>
-              <div style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.3)', marginTop: '2px', textAlign: 'right' }}>{o.pct}%</div>
+              <div style={{ fontSize: '0.5rem', color: 'var(--color-text-muted)', marginTop: '2px', textAlign: 'right' }}>{o.pct}%</div>
             </div>
           </motion.div>
         ))}
@@ -193,44 +193,44 @@ function MiniAIPreview() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <div style={{
             width: '22px', height: '22px', borderRadius: '6px',
-            background: 'linear-gradient(135deg, rgba(123,92,255,0.4), rgba(77,163,255,0.3))',
-            border: '1px solid rgba(123,92,255,0.3)',
+            background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-roxo) 40%, transparent), color-mix(in srgb, var(--color-lilas-mid) 30%, transparent))',
+            border: '1px solid color-mix(in srgb, var(--color-roxo) 30%, transparent)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <Sparkles size={11} color="#9B82FF" />
+            <Sparkles size={11} color="var(--color-lilas)" />
           </div>
-          <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)' }}>Agente Nexus</span>
+          <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--color-text-muted)' }}>Agente Nexus</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-          <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4ADE80', animation: 'nlPulse 2s infinite' }} />
-          <span style={{ fontSize: '0.55rem', color: '#4ADE80', fontWeight: 600 }}>Ativo</span>
+          <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--color-lilas)', animation: 'nlPulse 2s infinite' }} />
+          <span style={{ fontSize: '0.55rem', color: 'var(--color-lilas)', fontWeight: 600 }}>Ativo</span>
         </div>
       </div>
 
       {/* Flow diagram */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.3rem',
-        background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
+        background: 'color-mix(in srgb, var(--color-text) 2%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
         borderRadius: '7px', padding: '0.4rem 0.6rem',
       }}>
         {[
-          { label: 'Cliente', icon: '👤', color: '#4DA3FF' },
+          { label: 'Cliente', icon: '👤', color: 'var(--color-lilas-mid)' },
           null,
-          { label: 'Agente', icon: '🤖', color: '#7B5CFF' },
+          { label: 'Agente', icon: '🤖', color: 'var(--color-roxo)' },
           null,
-          { label: 'Sistema', icon: '⚙️', color: '#9B82FF' },
+          { label: 'Sistema', icon: '⚙️', color: 'var(--color-lilas)' },
         ].map((item, i) =>
           item === null ? (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
-              <div style={{ width: '8px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
-              <Zap size={8} color="rgba(123,92,255,0.7)" />
-              <div style={{ width: '8px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
+              <div style={{ width: '8px', height: '1px', background: 'color-mix(in srgb, var(--color-text) 20%, transparent)' }} />
+              <Zap size={8} color="color-mix(in srgb, var(--color-roxo) 70%, transparent)" />
+              <div style={{ width: '8px', height: '1px', background: 'color-mix(in srgb, var(--color-text) 20%, transparent)' }} />
             </div>
           ) : (
             <div key={i} style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '0.85rem', marginBottom: '2px',
-                filter: 'drop-shadow(0 0 4px rgba(123,92,255,0.4))',
+                filter: 'drop-shadow(0 0 4px color-mix(in srgb, var(--color-roxo) 40%, transparent))',
               }}>{item.icon}</div>
               <div style={{ fontSize: '0.5rem', color: item.color, fontWeight: 600 }}>{item.label}</div>
             </div>
@@ -254,21 +254,21 @@ function MiniAIPreview() {
             <div style={{
               maxWidth: '80%',
               background: m.from === 'agent'
-                ? 'linear-gradient(135deg, rgba(123,92,255,0.2), rgba(77,163,255,0.15))'
-                : 'rgba(255,255,255,0.05)',
+                ? 'linear-gradient(135deg, color-mix(in srgb, var(--color-roxo) 20%, transparent), color-mix(in srgb, var(--color-lilas-mid) 15%, transparent))'
+                : 'color-mix(in srgb, var(--color-text) 5%, transparent)',
               border: m.from === 'agent'
-                ? '1px solid rgba(123,92,255,0.25)'
-                : '1px solid rgba(255,255,255,0.07)',
+                ? '1px solid color-mix(in srgb, var(--color-roxo) 25%, transparent)'
+                : '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
               borderRadius: m.from === 'client' ? '10px 10px 10px 2px' : '10px 10px 2px 10px',
               padding: '0.35rem 0.55rem',
               fontSize: '0.58rem',
-              color: m.from === 'agent' ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.6)',
+              color: m.from === 'agent' ? 'var(--color-text)' : 'var(--color-text-muted)',
               lineHeight: 1.4,
             }}>
               {m.from === 'agent' && (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '2px' }}>
-                  <Bot size={8} color="#9B82FF" />
-                  <span style={{ fontSize: '0.5rem', color: '#9B82FF', fontWeight: 700 }}>Agente Nexus</span>
+                  <Bot size={8} color="var(--color-lilas)" />
+                  <span style={{ fontSize: '0.5rem', color: 'var(--color-lilas)', fontWeight: 700 }}>Agente Nexus</span>
                 </div>
               )}
               {m.text}
@@ -279,17 +279,17 @@ function MiniAIPreview() {
 
       {/* Input bar */}
       <div style={{
-        background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
+        background: 'color-mix(in srgb, var(--color-text) 3%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
         borderRadius: '7px', padding: '0.35rem 0.6rem',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.2)' }}>Enviar mensagem...</span>
+        <span style={{ fontSize: '0.55rem', color: 'var(--color-text-muted)' }}>Enviar mensagem...</span>
         <div style={{
           width: '18px', height: '18px', borderRadius: '5px',
-          background: 'rgba(123,92,255,0.2)', border: '1px solid rgba(123,92,255,0.3)',
+          background: 'color-mix(in srgb, var(--color-roxo) 20%, transparent)', border: '1px solid color-mix(in srgb, var(--color-roxo) 30%, transparent)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
-          <ArrowRight size={9} color="#9B82FF" />
+          <ArrowRight size={9} color="var(--color-lilas)" />
         </div>
       </div>
     </div>
@@ -301,7 +301,7 @@ function MiniAIPreview() {
 const CARDS = [
   {
     icon: BarChart2,
-    accent: '#7B5CFF',
+    accent: 'var(--color-roxo)',
     label: 'Dashboard Executivo',
     desc: 'Painéis com indicadores, métricas e visão gerencial para decisões mais rápidas e seguras.',
     items: ['KPIs em tempo real', 'Gráficos interativos', 'Visão estratégica'],
@@ -309,7 +309,7 @@ const CARDS = [
   },
   {
     icon: Settings2,
-    accent: '#4DA3FF',
+    accent: 'var(--color-lilas-mid)',
     label: 'Gestão Operacional',
     desc: 'Fluxos de pedidos, status, etapas, responsáveis e acompanhamento completo da operação.',
     items: ['Controle por etapa', 'Permissões por perfil', 'Histórico de movimentações'],
@@ -317,7 +317,7 @@ const CARDS = [
   },
   {
     icon: Bot,
-    accent: '#9B82FF',
+    accent: 'var(--color-lilas)',
     label: 'Automação com IA',
     desc: 'Agentes inteligentes, notificações automáticas e fluxos integrados para reduzir tarefas manuais.',
     items: ['WhatsApp integrado', 'Mensagens automáticas', 'Agentes inteligentes'],
@@ -336,7 +336,7 @@ export default function VisualProofSection() {
       {/* bg glow */}
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 70% 40% at 50% 50%, rgba(77,163,255,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 70% 40% at 50% 50%, color-mix(in srgb, var(--color-lilas-mid) 4%, transparent) 0%, transparent 70%)',
       }} />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
@@ -350,19 +350,19 @@ export default function VisualProofSection() {
         >
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px', padding: '0.3rem 0.9rem',
             fontSize: '0.72rem', fontWeight: 700,
-            color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em',
+            color: 'var(--color-text-muted)', letterSpacing: '0.08em',
             textTransform: 'uppercase', marginBottom: '1.25rem',
           }}>
             Prova Visual
           </div>
 
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-            fontWeight: 700, color: '#fff',
+            fontWeight: 700, color: 'var(--color-text)',
             letterSpacing: '-0.025em', marginBottom: '1rem',
           }}>
             Veja o padrão Nexus{' '}
@@ -370,7 +370,7 @@ export default function VisualProofSection() {
           </h2>
 
           <p style={{
-            fontSize: '1rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '1rem', color: 'var(--color-text-muted)',
             maxWidth: '580px', margin: '0 auto', lineHeight: 1.75,
           }}>
             Interfaces premium, dashboards executivos e experiências digitais criadas para transmitir
@@ -391,39 +391,39 @@ export default function VisualProofSection() {
                 transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 style={{
-                  background: 'rgba(18,18,26,0.9)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'color-mix(in srgb, var(--color-surface) 90%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
                   borderRadius: '20px',
                   overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
-                  boxShadow: `0 0 0 0 ${card.accent}00`,
+                  boxShadow: `0 0 0 0 transparent`,
                   transition: 'border-color 0.3s, box-shadow 0.3s',
                 }}
                 onHoverStart={e => {
                   const el = (e.target as HTMLElement).closest('[data-vp-card]') as HTMLElement
                   if (el) {
-                    el.style.borderColor = `${card.accent}30`
-                    el.style.boxShadow = `0 0 40px ${card.accent}10`
+                    el.style.borderColor = `color-mix(in srgb, ${card.accent} 18.8%, transparent)`
+                    el.style.boxShadow = `0 0 40px color-mix(in srgb, ${card.accent} 6.3%, transparent)`
                   }
                 }}
                 onHoverEnd={e => {
                   const el = (e.target as HTMLElement).closest('[data-vp-card]') as HTMLElement
                   if (el) {
-                    el.style.borderColor = 'rgba(255,255,255,0.08)'
+                    el.style.borderColor = 'color-mix(in srgb, var(--color-text) 8%, transparent)'
                     el.style.boxShadow = 'none'
                   }
                 }}
                 data-vp-card
               >
                 {/* Top accent */}
-                <div style={{ height: '2px', background: `linear-gradient(90deg, ${card.accent}, ${card.accent}40)` }} />
+                <div style={{ height: '2px', background: `linear-gradient(90deg, ${card.accent}, color-mix(in srgb, ${card.accent} 25.1%, transparent))` }} />
 
                 {/* Mock preview area */}
                 <div style={{
                   padding: '1.25rem 1.25rem 1rem',
-                  background: `radial-gradient(ellipse at top right, ${card.accent}08 0%, transparent 60%)`,
+                  background: `radial-gradient(ellipse at top right, color-mix(in srgb, ${card.accent} 3.1%, transparent) 0%, transparent 60%)`,
                   flex: 1, minHeight: '220px',
                 }}>
                   <Preview />
@@ -432,27 +432,27 @@ export default function VisualProofSection() {
                 {/* Info area */}
                 <div style={{
                   padding: '1rem 1.25rem 1.3rem',
-                  borderTop: '1px solid rgba(255,255,255,0.06)',
-                  background: 'rgba(0,0,0,0.15)',
+                  borderTop: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
+                  background: 'color-mix(in srgb, var(--color-bg) 15%, transparent)',
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
                     <div style={{
                       width: '30px', height: '30px', borderRadius: '8px',
-                      background: `${card.accent}18`, border: `1px solid ${card.accent}30`,
+                      background: `color-mix(in srgb, ${card.accent} 9.4%, transparent)`, border: `1px solid color-mix(in srgb, ${card.accent} 18.8%, transparent)`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                     }}>
                       <Icon size={14} color={card.accent} />
                     </div>
                     <h3 style={{
-                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '0.92rem', fontWeight: 700,
-                      color: '#fff', letterSpacing: '-0.01em', margin: 0,
+                      color: 'var(--color-text)', letterSpacing: '-0.01em', margin: 0,
                     }}>
                       {card.label}
                     </h3>
                   </div>
                   <p style={{
-                    fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)',
+                    fontSize: '0.8rem', color: 'var(--color-text-muted)',
                     lineHeight: 1.65, marginBottom: '0.75rem',
                   }}>
                     {card.desc}
@@ -461,7 +461,7 @@ export default function VisualProofSection() {
                     {card.items.map(item => (
                       <span key={item} style={{
                         fontSize: '0.68rem', color: card.accent,
-                        background: `${card.accent}12`, border: `1px solid ${card.accent}25`,
+                        background: `color-mix(in srgb, ${card.accent} 7.1%, transparent)`, border: `1px solid color-mix(in srgb, ${card.accent} 14.5%, transparent)`,
                         borderRadius: '5px', padding: '0.18rem 0.5rem',
                         fontWeight: 500,
                       }}>
@@ -485,7 +485,7 @@ export default function VisualProofSection() {
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.1rem',
           }}
         >
-          <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)' }}>
             Quer uma interface assim para sua operação?
           </p>
           <a

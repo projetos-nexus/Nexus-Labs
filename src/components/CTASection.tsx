@@ -8,9 +8,9 @@ const WA_PRIMARY = createWhatsAppUrl(
 )
 
 const steps = [
-  { icon: Search,  label: 'Diagnóstico',  status: 'Iniciado',     color: '#7B5CFF' },
-  { icon: Layout,  label: 'Protótipo',    status: 'Validado',     color: '#4DA3FF' },
-  { icon: Rocket,  label: 'Implantação',  status: 'Em andamento', color: '#4ADE80' },
+  { icon: Search,  label: 'Diagnóstico',  status: 'Iniciado',     color: 'var(--color-roxo)' },
+  { icon: Layout,  label: 'Protótipo',    status: 'Validado',     color: 'var(--color-lilas-mid)' },
+  { icon: Rocket,  label: 'Implantação',  status: 'Em andamento', color: 'var(--color-lilas)' },
 ]
 
 export default function CTASection() {
@@ -28,25 +28,25 @@ export default function CTASection() {
         <div style={{
           position: 'absolute', top: '30%', left: '-5%',
           width: '600px', height: '600px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(123,92,255,0.12) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, color-mix(in srgb, var(--color-roxo) 12%, transparent) 0%, transparent 65%)',
           filter: 'blur(60px)',
         }} />
         <div style={{
           position: 'absolute', bottom: '10%', right: '-5%',
           width: '500px', height: '500px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(77,163,255,0.09) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, color-mix(in srgb, var(--color-lilas-mid) 9%, transparent) 0%, transparent 65%)',
           filter: 'blur(60px)',
         }} />
         {/* Grid overlay */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+            linear-gradient(color-mix(in srgb, var(--color-text) 2%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--color-text) 2%, transparent) 1px, transparent 1px)
           `,
           backgroundSize: '64px 64px',
-          maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, var(--color-bg) 30%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, var(--color-bg) 30%, transparent 100%)',
         }} />
       </div>
 
@@ -56,17 +56,17 @@ export default function CTASection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            background: 'rgba(15,15,22,0.95)',
-            border: '1px solid rgba(255,255,255,0.09)',
+            background: 'color-mix(in srgb, var(--color-surface-alt) 95%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-text) 9%, transparent)',
             borderRadius: '24px',
             overflow: 'hidden',
-            boxShadow: '0 0 0 1px rgba(123,92,255,0.08), 0 32px 80px rgba(0,0,0,0.5)',
+            boxShadow: '0 0 0 1px color-mix(in srgb, var(--color-roxo) 8%, transparent), 0 32px 80px color-mix(in srgb, var(--color-bg) 50%, transparent)',
           }}
         >
           {/* Top accent */}
           <div style={{
             height: '2px',
-            background: 'linear-gradient(90deg, transparent 0%, #7B5CFF 30%, #4DA3FF 70%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, var(--color-roxo) 30%, var(--color-lilas-mid) 70%, transparent 100%)',
           }} />
 
           <div style={{ padding: 'clamp(2rem, 5vw, 3.5rem)', display: 'grid', gap: '3rem', alignItems: 'center' }} className="cta-inner">
@@ -80,10 +80,10 @@ export default function CTASection() {
                 transition={{ duration: 0.45, delay: 0.1 }}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                  background: 'rgba(123,92,255,0.1)', border: '1px solid rgba(123,92,255,0.25)',
+                  background: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--color-roxo) 25%, transparent)',
                   borderRadius: '100px', padding: '0.3rem 0.9rem',
                   fontSize: '0.72rem', fontWeight: 700,
-                  color: '#9B82FF', letterSpacing: '0.07em', textTransform: 'uppercase',
+                  color: 'var(--color-lilas)', letterSpacing: '0.07em', textTransform: 'uppercase',
                   marginBottom: '1.5rem',
                 }}
               >
@@ -91,9 +91,9 @@ export default function CTASection() {
               </motion.div>
 
               <h2 style={{
-                fontFamily: '"Space Grotesk", sans-serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(1.7rem, 3.5vw, 2.6rem)',
-                fontWeight: 800, color: '#fff',
+                fontWeight: 800, color: 'var(--color-text)',
                 letterSpacing: '-0.03em', lineHeight: 1.1,
                 marginBottom: '1.1rem',
               }}>
@@ -102,7 +102,7 @@ export default function CTASection() {
               </h2>
 
               <p style={{
-                fontSize: '0.97rem', color: 'rgba(255,255,255,0.52)',
+                fontSize: '0.97rem', color: 'var(--color-text-muted)',
                 lineHeight: 1.78, marginBottom: '2rem',
                 maxWidth: '520px',
               }}>
@@ -139,19 +139,19 @@ export default function CTASection() {
                     display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                     fontSize: '0.9rem', fontWeight: 500,
                     padding: '0.85rem 1.6rem', borderRadius: '10px',
-                    textDecoration: 'none', color: 'rgba(255,255,255,0.7)',
-                    border: '1px solid rgba(255,255,255,0.14)',
+                    textDecoration: 'none', color: 'var(--color-text-muted)',
+                    border: '1px solid color-mix(in srgb, var(--color-text) 14%, transparent)',
                     transition: 'all 0.2s',
                   }}
                   onHoverStart={e => {
                     const el = e.target as HTMLElement
-                    el.style.background = 'rgba(255,255,255,0.05)'
-                    el.style.color = '#fff'
+                    el.style.background = 'color-mix(in srgb, var(--color-text) 5%, transparent)'
+                    el.style.color = 'var(--color-text)'
                   }}
                   onHoverEnd={e => {
                     const el = e.target as HTMLElement
                     el.style.background = 'transparent'
-                    el.style.color = 'rgba(255,255,255,0.7)'
+                    el.style.color = 'var(--color-text-muted)'
                   }}
                 >
                   Ver projetos prontos <ChevronRight size={15} />
@@ -162,8 +162,8 @@ export default function CTASection() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {['Resposta rápida', 'Diagnóstico inicial', 'Sem compromisso'].map((item, i) => (
                   <span key={item} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                    {i > 0 && <span style={{ color: 'rgba(255,255,255,0.15)', fontSize: '0.75rem' }}>•</span>}
-                    <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', fontWeight: 400 }}>
+                    {i > 0 && <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>•</span>}
+                    <span style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>
                       {item}
                     </span>
                   </span>
@@ -177,7 +177,7 @@ export default function CTASection() {
               <div style={{ marginBottom: '0.25rem' }}>
                 <span style={{
                   fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.07em',
-                  color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase',
+                  color: 'var(--color-text-muted)', textTransform: 'uppercase',
                 }}>
                   Projeto em andamento
                 </span>
@@ -193,8 +193,8 @@ export default function CTASection() {
                     transition={{ duration: 0.5, delay: 0.3 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                     style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      background: 'rgba(255,255,255,0.03)',
-                      border: `1px solid ${step.color}22`,
+                      background: 'color-mix(in srgb, var(--color-text) 3%, transparent)',
+                      border: `1px solid color-mix(in srgb, ${step.color} 13.3%, transparent)`,
                       borderRadius: '12px', padding: '0.9rem 1.1rem',
                       gap: '1rem',
                     }}
@@ -202,14 +202,14 @@ export default function CTASection() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
                       <div style={{
                         width: '34px', height: '34px', borderRadius: '9px', flexShrink: 0,
-                        background: `${step.color}15`, border: `1px solid ${step.color}30`,
+                        background: `color-mix(in srgb, ${step.color} 8.2%, transparent)`, border: `1px solid color-mix(in srgb, ${step.color} 18.8%, transparent)`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                       }}>
                         <Icon size={15} color={step.color} />
                       </div>
                       <span style={{
-                        fontFamily: '"Space Grotesk", sans-serif',
-                        fontSize: '0.88rem', fontWeight: 600, color: '#fff',
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text)',
                       }}>
                         {step.label}
                       </span>
@@ -217,7 +217,7 @@ export default function CTASection() {
                     <div style={{
                       display: 'flex', alignItems: 'center', gap: '0.35rem',
                       fontSize: '0.65rem', fontWeight: 600, color: step.color,
-                      background: `${step.color}12`, border: `1px solid ${step.color}25`,
+                      background: `color-mix(in srgb, ${step.color} 7.1%, transparent)`, border: `1px solid color-mix(in srgb, ${step.color} 14.5%, transparent)`,
                       borderRadius: '5px', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap', flexShrink: 0,
                     }}>
                       <div style={{
@@ -234,13 +234,13 @@ export default function CTASection() {
               {/* Connector line decoration */}
               <div style={{
                 marginTop: '0.25rem', padding: '0.85rem 1.1rem',
-                background: 'rgba(123,92,255,0.06)',
-                border: '1px solid rgba(123,92,255,0.15)',
+                background: 'color-mix(in srgb, var(--color-roxo) 6%, transparent)',
+                border: '1px solid color-mix(in srgb, var(--color-roxo) 15%, transparent)',
                 borderRadius: '12px',
                 display: 'flex', alignItems: 'center', gap: '0.6rem',
               }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7B5CFF', animation: 'nlPulse 2s ease-in-out infinite', flexShrink: 0 }} />
-                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-roxo)', animation: 'nlPulse 2s ease-in-out infinite', flexShrink: 0 }} />
+                <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
                   A Nexus Labs conduz cada projeto do diagnóstico à implantação, com método e sem improviso.
                 </span>
               </div>
@@ -268,8 +268,8 @@ export default function CTASection() {
           }
         }
         @keyframes nlPulse {
-          0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); }
-          50%      { opacity:0.6; box-shadow:0 0 0 4px rgba(74,222,128,0); }
+          0%,100% { opacity:1; box-shadow:0 0 0 0 color-mix(in srgb, var(--color-lilas) 40%, transparent); }
+          50%      { opacity:0.6; box-shadow:0 0 0 4px transparent; }
         }
       `}</style>
     </section>

@@ -15,8 +15,8 @@ const steps = [
     description:
       'Entendemos o fluxo atual da empresa, os gargalos, os controles manuais e onde a tecnologia pode gerar mais impacto.',
     points: ['Mapeamento do problema', 'Análise do processo atual', 'Definição de prioridades'],
-    accent: '#7B5CFF',
-    accentBg: 'rgba(123,92,255,0.1)',
+    accent: 'var(--color-roxo)',
+    accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
   {
     number: '02',
@@ -25,8 +25,8 @@ const steps = [
     description:
       'Criamos uma visão clara da solução antes do desenvolvimento completo, validando telas, fluxos e experiência do usuário.',
     points: ['Estrutura das telas', 'Jornada do usuário', 'Validação visual'],
-    accent: '#4DA3FF',
-    accentBg: 'rgba(77,163,255,0.1)',
+    accent: 'var(--color-lilas-mid)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)',
   },
   {
     number: '03',
@@ -35,8 +35,8 @@ const steps = [
     description:
       'Transformamos o protótipo em sistema real, com interface premium, regras de negócio, permissões, dashboards e integrações.',
     points: ['Frontend moderno', 'Regras de negócio', 'Integrações e automações'],
-    accent: '#9B82FF',
-    accentBg: 'rgba(155,130,255,0.1)',
+    accent: 'var(--color-lilas)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)',
   },
   {
     number: '04',
@@ -45,8 +45,8 @@ const steps = [
     description:
       'Configuramos o sistema para o uso real da empresa, ajustando usuários, acessos, dados iniciais e fluxos operacionais.',
     points: ['Configuração inicial', 'Ajustes finais', 'Preparação para operação'],
-    accent: '#4DA3FF',
-    accentBg: 'rgba(77,163,255,0.1)',
+    accent: 'var(--color-lilas-mid)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)',
   },
   {
     number: '05',
@@ -55,8 +55,8 @@ const steps = [
     description:
       'Depois da entrega, o sistema pode continuar evoluindo com melhorias, novos módulos, automações e integrações.',
     points: ['Melhorias contínuas', 'Novos módulos', 'Suporte e evolução'],
-    accent: '#7B5CFF',
-    accentBg: 'rgba(123,92,255,0.1)',
+    accent: 'var(--color-roxo)',
+    accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
 ]
 
@@ -74,13 +74,14 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
       onHoverEnd={() => setHov(false)}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
       style={{
-        background: 'rgba(18,18,26,0.9)',
-        border: `1px solid ${hov ? step.accent + '35' : 'rgba(255,255,255,0.08)'}`,
+        background: 'color-mix(in srgb, var(--color-surface) 90%, transparent)',
+        border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
+        borderColor: hov ? `color-mix(in srgb, ${step.accent} 20.8%, transparent)` : undefined,
         borderRadius: '16px',
         padding: '1.6rem',
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: hov ? `0 0 32px ${step.accent}12` : 'none',
+        boxShadow: hov ? `0 0 32px color-mix(in srgb, ${step.accent} 7.1%, transparent)` : 'none',
         transition: 'border-color 0.25s, box-shadow 0.25s',
       }}
     >
@@ -88,7 +89,7 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
       <div aria-hidden="true" style={{
         position: 'absolute', bottom: '-20px', right: '-20px',
         width: '100px', height: '100px', borderRadius: '50%',
-        background: `radial-gradient(circle, ${step.accent}0d 0%, transparent 70%)`,
+        background: `radial-gradient(circle, color-mix(in srgb, ${step.accent} 5.1%, transparent) 0%, transparent 70%)`,
         pointerEvents: 'none',
         opacity: hov ? 2 : 1,
         transition: 'opacity 0.3s',
@@ -96,37 +97,37 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
 
       {/* Number + icon row */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-        <motion.div
-          animate={{ borderColor: hov ? step.accent + '60' : step.accent + '30', boxShadow: hov ? `0 0 16px ${step.accent}30` : 'none' }}
-          transition={{ duration: 0.25 }}
+        <div
           style={{
+            boxShadow: hov ? `0 0 16px color-mix(in srgb, ${step.accent} 18.8%, transparent)` : 'none',
+            transition: 'border-color 0.25s, box-shadow 0.25s',
             width: '42px', height: '42px', borderRadius: '50%', flexShrink: 0,
             background: step.accentBg,
-            border: `2px solid ${step.accent}30`,
+            border: `2px solid color-mix(in srgb, ${step.accent} ${hov ? 37.6 : 18.8}%, transparent)`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
         >
           <span style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: '0.82rem', fontWeight: 800,
             color: step.accent,
           }}>
             {step.number}
           </span>
-        </motion.div>
+        </div>
 
         <div style={{
           width: '34px', height: '34px', borderRadius: '9px', flexShrink: 0,
-          background: step.accentBg, border: `1px solid ${step.accent}25`,
+          background: step.accentBg, border: `1px solid color-mix(in srgb, ${step.accent} 14.5%, transparent)`,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <Icon size={15} color={step.accent} />
         </div>
 
         <h3 style={{
-          fontFamily: '"Space Grotesk", sans-serif',
+          fontFamily: 'var(--font-display)',
           fontSize: '1rem', fontWeight: 700,
-          color: '#fff', letterSpacing: '-0.01em', margin: 0,
+          color: 'var(--color-text)', letterSpacing: '-0.01em', margin: 0,
         }}>
           {step.title}
         </h3>
@@ -134,7 +135,7 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
 
       {/* Description */}
       <p style={{
-        fontSize: '0.83rem', color: 'rgba(255,255,255,0.5)',
+        fontSize: '0.83rem', color: 'var(--color-text-muted)',
         lineHeight: 1.72, marginBottom: '1rem',
       }}>
         {step.description}
@@ -143,7 +144,7 @@ function StepCard({ step, index, inView }: { step: typeof steps[0]; index: numbe
       {/* Points */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
         {step.points.map(pt => (
-          <div key={pt} style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
+          <div key={pt} style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
             <Check size={11} color={step.accent} strokeWidth={2.5} style={{ flexShrink: 0 }} />
             {pt}
           </div>
@@ -158,11 +159,11 @@ export default function ProcessSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="processo" ref={ref} style={{ padding: '6rem 1.5rem', position: 'relative' }}>
+    <section id="processo" ref={ref} style={{ padding: '6rem 1.5rem', position: 'relative', overflowX: 'clip' }}>
       {/* Subtle bg */}
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'linear-gradient(135deg, rgba(123,92,255,0.03) 0%, transparent 50%, rgba(77,163,255,0.03) 100%)',
+        background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-roxo) 3%, transparent) 0%, transparent 50%, color-mix(in srgb, var(--color-lilas-mid) 3%, transparent) 100%)',
       }} />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
@@ -176,19 +177,19 @@ export default function ProcessSection() {
         >
           <div style={{
             display: 'inline-flex', alignItems: 'center',
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px', padding: '0.3rem 0.9rem',
             fontSize: '0.72rem', fontWeight: 700,
-            color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em',
+            color: 'var(--color-text-muted)', letterSpacing: '0.08em',
             textTransform: 'uppercase', marginBottom: '1.25rem',
           }}>
             Processo
           </div>
 
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-            fontWeight: 700, color: '#fff',
+            fontWeight: 700, color: 'var(--color-text)',
             letterSpacing: '-0.025em', marginBottom: '1rem',
           }}>
             Do diagnóstico à implantação,{' '}
@@ -196,7 +197,7 @@ export default function ProcessSection() {
           </h2>
 
           <p style={{
-            fontSize: '1rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '1rem', color: 'var(--color-text-muted)',
             maxWidth: '580px', margin: '0 auto', lineHeight: 1.75,
           }}>
             Cada projeto é conduzido com clareza, estratégia e foco em resultado. Antes de desenvolver,
@@ -218,7 +219,7 @@ export default function ProcessSection() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 width: '100%', height: '100%',
-                background: 'linear-gradient(180deg, transparent 0%, rgba(123,92,255,0.3) 8%, rgba(123,92,255,0.25) 85%, transparent 100%)',
+                background: 'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-roxo) 30%, transparent) 8%, color-mix(in srgb, var(--color-roxo) 25%, transparent) 85%, transparent 100%)',
                 transformOrigin: 'top',
               }}
             />
@@ -248,7 +249,7 @@ export default function ProcessSection() {
                       style={{
                         width: '14px', height: '14px', borderRadius: '50%',
                         background: step.accent,
-                        boxShadow: `0 0 12px ${step.accent}60`,
+                        boxShadow: `0 0 12px color-mix(in srgb, ${step.accent} 37.6%, transparent)`,
                         flexShrink: 0,
                       }}
                     />
@@ -272,8 +273,8 @@ export default function ProcessSection() {
           transition={{ duration: 0.7, delay: 0.6 }}
           style={{
             marginTop: '4rem',
-            background: 'rgba(18,18,26,0.9)',
-            border: '1px solid rgba(123,92,255,0.18)',
+            background: 'color-mix(in srgb, var(--color-surface) 90%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-roxo) 18%, transparent)',
             borderRadius: '20px',
             padding: 'clamp(1.75rem, 4vw, 2.5rem)',
             position: 'relative', overflow: 'hidden',
@@ -283,27 +284,27 @@ export default function ProcessSection() {
           {/* Top line */}
           <div style={{
             position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
-            background: 'linear-gradient(90deg, transparent, rgba(123,92,255,0.4), rgba(77,163,255,0.4), transparent)',
+            background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-roxo) 40%, transparent), color-mix(in srgb, var(--color-lilas-mid) 40%, transparent), transparent)',
           }} />
           {/* Inner glow */}
           <div aria-hidden="true" style={{
             position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)',
             width: '300px', height: '120px',
-            background: 'radial-gradient(ellipse, rgba(123,92,255,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, color-mix(in srgb, var(--color-roxo) 10%, transparent) 0%, transparent 70%)',
             pointerEvents: 'none',
           }} />
 
           <h3 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.2rem, 3vw, 1.6rem)',
-            fontWeight: 700, color: '#fff',
+            fontWeight: 700, color: 'var(--color-text)',
             letterSpacing: '-0.02em', marginBottom: '0.75rem',
           }}>
             Você não precisa chegar com tudo pronto.
           </h3>
 
           <p style={{
-            fontSize: '0.95rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '0.95rem', color: 'var(--color-text-muted)',
             maxWidth: '520px', margin: '0 auto 1.75rem', lineHeight: 1.75,
           }}>
             Se você tem apenas uma ideia, uma dor operacional ou um processo confuso, a Nexus Labs

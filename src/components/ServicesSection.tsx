@@ -5,9 +5,9 @@ import { Layers, Bot, Zap } from 'lucide-react'
 const services = [
   {
     icon: Layers,
-    color: '#7B5CFF',
-    colorBg: 'rgba(123,92,255,0.1)',
-    colorBorder: 'rgba(123,92,255,0.2)',
+    color: 'var(--color-roxo)',
+    colorBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
+    colorBorder: 'color-mix(in srgb, var(--color-roxo) 20%, transparent)',
     title: 'Sistemas sob medida',
     description:
       'Plataformas criadas para o fluxo real da sua empresa, com permissões, dashboards, relatórios e experiência premium. Sem adaptar a operação a um sistema genérico.',
@@ -15,9 +15,9 @@ const services = [
   },
   {
     icon: Zap,
-    color: '#4DA3FF',
-    colorBg: 'rgba(77,163,255,0.1)',
-    colorBorder: 'rgba(77,163,255,0.2)',
+    color: 'var(--color-lilas-mid)',
+    colorBg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)',
+    colorBorder: 'color-mix(in srgb, var(--color-lilas-mid) 20%, transparent)',
     title: 'Automações inteligentes',
     description:
       'Rotinas manuais transformadas em fluxos automáticos para reduzir erros, ganhar velocidade e liberar o time para o que realmente gera resultado.',
@@ -25,9 +25,9 @@ const services = [
   },
   {
     icon: Bot,
-    color: '#9B82FF',
-    colorBg: 'rgba(155,130,255,0.1)',
-    colorBorder: 'rgba(155,130,255,0.2)',
+    color: 'var(--color-lilas)',
+    colorBg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)',
+    colorBorder: 'color-mix(in srgb, var(--color-lilas) 20%, transparent)',
     title: 'IA integrada ao negócio',
     description:
       'Agentes inteligentes conectados aos processos da empresa para apoiar atendimento, análise, notificações e tomada de decisão com contexto real da operação.',
@@ -66,13 +66,13 @@ export default function ServicesSection() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.4rem',
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px',
             padding: '0.3rem 0.9rem',
             fontSize: '0.75rem',
             fontWeight: 600,
-            color: 'rgba(255,255,255,0.4)',
+            color: 'var(--color-text-muted)',
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
             marginBottom: '1.25rem',
@@ -80,10 +80,10 @@ export default function ServicesSection() {
             O que fazemos
           </div>
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
             fontWeight: 700,
-            color: '#fff',
+            color: 'var(--color-text)',
             letterSpacing: '-0.025em',
             marginBottom: '1rem',
           }}>
@@ -91,7 +91,7 @@ export default function ServicesSection() {
           </h2>
           <p style={{
             fontSize: '1rem',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'var(--color-text-muted)',
             maxWidth: '520px',
             margin: '0 auto',
             lineHeight: 1.7,
@@ -117,8 +117,8 @@ export default function ServicesSection() {
                 custom={i}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 style={{
-                  background: 'rgba(18,18,26,0.8)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'color-mix(in srgb, var(--color-surface) 80%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
                   borderRadius: '16px',
                   padding: '2rem',
                   position: 'relative',
@@ -133,7 +133,7 @@ export default function ServicesSection() {
                 }}
                 onHoverEnd={e => {
                   const el = e.target as HTMLElement
-                  el.style.borderColor = 'rgba(255,255,255,0.08)'
+                  el.style.borderColor = 'color-mix(in srgb, var(--color-text) 8%, transparent)'
                   el.style.boxShadow = 'none'
                 }}
               >
@@ -142,7 +142,7 @@ export default function ServicesSection() {
                   position: 'absolute',
                   top: 0, left: 0, right: 0,
                   height: '1px',
-                  background: `linear-gradient(90deg, transparent, ${svc.color}40, transparent)`,
+                  background: `linear-gradient(90deg, transparent, color-mix(in srgb, ${svc.color} 25.1%, transparent), transparent)`,
                 }} />
 
                 {/* Icon */}
@@ -158,10 +158,10 @@ export default function ServicesSection() {
                 </div>
 
                 <h3 style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '1.15rem',
                   fontWeight: 700,
-                  color: '#fff',
+                  color: 'var(--color-text)',
                   marginBottom: '0.75rem',
                   letterSpacing: '-0.01em',
                 }}>
@@ -170,7 +170,7 @@ export default function ServicesSection() {
 
                 <p style={{
                   fontSize: '0.88rem',
-                  color: 'rgba(255,255,255,0.55)',
+                  color: 'var(--color-text-muted)',
                   lineHeight: 1.75,
                   marginBottom: '1.5rem',
                 }}>
@@ -185,7 +185,7 @@ export default function ServicesSection() {
                       alignItems: 'center',
                       gap: '0.5rem',
                       fontSize: '0.82rem',
-                      color: 'rgba(255,255,255,0.45)',
+                      color: 'var(--color-text-muted)',
                     }}>
                       <div style={{
                         width: '5px', height: '5px',
@@ -206,7 +206,7 @@ export default function ServicesSection() {
                   width: '160px',
                   height: '160px',
                   borderRadius: '50%',
-                  background: `radial-gradient(circle, ${svc.color}0A 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, color-mix(in srgb, ${svc.color} 3.9%, transparent) 0%, transparent 70%)`,
                   pointerEvents: 'none',
                 }} />
               </motion.div>

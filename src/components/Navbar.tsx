@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import logoNexusLabsLinhaUnica from '../assets/logos/logo-nexus-labs-linha-unica.svg'
+import logoNexusLabsHorizontal from '../assets/logos/logo-nexus-labs-horizontal.svg'
 
 const navLinks = [
   { label: 'Serviços', href: '#servicos' },
@@ -28,10 +28,10 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          background: scrolled ? 'rgba(11,11,15,0.88)' : 'transparent',
+          background: scrolled ? 'color-mix(in srgb, var(--color-bg) 88%, transparent)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
           transition: 'all 0.4s ease',
         }}
       >
@@ -41,11 +41,10 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <img
-                src={logoNexusLabsLinhaUnica}
+                src={logoNexusLabsHorizontal}
                 alt="Nexus Labs"
                 loading="eager"
                 className="navbar-logo"
-                style={{ height: '32px', width: 'auto', maxWidth: '320px', objectFit: 'contain', display: 'block' }}
               />
             </a>
 
@@ -55,22 +54,14 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
+                  className="navbar-link"
                   style={{
-                    color: 'rgba(255,255,255,0.6)',
                     textDecoration: 'none',
                     fontSize: '0.88rem',
                     fontWeight: 500,
                     padding: '0.5rem 0.85rem',
                     borderRadius: '8px',
                     transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={e => {
-                    (e.target as HTMLElement).style.color = '#fff'
-                    ;(e.target as HTMLElement).style.background = 'rgba(255,255,255,0.06)'
-                  }}
-                  onMouseLeave={e => {
-                    (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.6)'
-                    ;(e.target as HTMLElement).style.background = 'transparent'
                   }}
                 >
                   {link.label}
@@ -95,14 +86,14 @@ export default function Navbar() {
                 aria-expanded={mobileOpen}
                 aria-controls={mobileOpen ? 'mobile-nav-menu' : undefined}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'color-mix(in srgb, var(--color-text) 6%, transparent)',
+                  border: '1px solid var(--color-border-strong)',
                   borderRadius: '8px',
                   padding: '0.5rem',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  color: '#fff',
+                  color: 'var(--color-text)',
                 }}
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -126,9 +117,9 @@ export default function Navbar() {
               top: '68px',
               left: 0, right: 0,
               zIndex: 49,
-              background: 'rgba(11,11,15,0.97)',
+              background: 'color-mix(in srgb, var(--color-bg) 97%, transparent)',
               backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid var(--color-border)',
               padding: '1.25rem 1.5rem 1.5rem',
             }}
           >
@@ -142,12 +133,12 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
-                  color: 'rgba(255,255,255,0.75)',
+                  color: 'var(--color-text)',
                   textDecoration: 'none',
                   fontSize: '1rem',
                   fontWeight: 500,
                   padding: '0.85rem 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  borderBottom: '1px solid var(--color-border)',
                 }}
               >
                 {link.label}
@@ -166,15 +157,22 @@ export default function Navbar() {
       </AnimatePresence>
 
       <style>{`
-        @media (min-width: 768px) {
+        .navbar-link { color: var(--color-text-muted); }
+        .navbar-link:hover, .navbar-link:focus-visible {
+          color: var(--color-text);
+          background: color-mix(in srgb, var(--color-text) 6%, transparent);
+        }
+        .navbar-logo { height: 34px; width: auto; display: block; }
+        @media (max-width: 767px) {
+          .navbar-logo { height: 26px; }
+        }
+        @media (min-width: 900px) {
           .hidden-mobile { display: flex !important; }
           .show-mobile { display: none !important; }
-          .navbar-logo { height: 32px !important; max-width: 320px !important; width: auto !important; }
         }
-        @media (max-width: 767px) {
+        @media (width < 900px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
-          .navbar-logo { height: 22px !important; max-width: 220px !important; width: auto !important; }
         }
       `}</style>
     </>

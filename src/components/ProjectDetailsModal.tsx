@@ -5,9 +5,9 @@ import type { Project } from '../data/projects'
 import { WA_URLS } from '../config/contact'
 
 const statusStyle: Record<string, { color: string; bg: string; border: string }> = {
-  'Projeto pronto': { color: '#4ADE80', bg: 'rgba(74,222,128,0.1)', border: 'rgba(74,222,128,0.2)' },
-  Adaptável: { color: '#4DA3FF', bg: 'rgba(77,163,255,0.1)', border: 'rgba(77,163,255,0.2)' },
-  'Sob medida': { color: '#9B82FF', bg: 'rgba(155,130,255,0.1)', border: 'rgba(155,130,255,0.2)' },
+  'Projeto pronto': { color: 'var(--color-lilas)', bg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)', border: 'color-mix(in srgb, var(--color-lilas) 20%, transparent)' },
+  Adaptável: { color: 'var(--color-lilas-mid)', bg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)', border: 'color-mix(in srgb, var(--color-lilas-mid) 20%, transparent)' },
+  'Sob medida': { color: 'var(--color-lilas)', bg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)', border: 'color-mix(in srgb, var(--color-lilas) 20%, transparent)' },
 }
 
 interface Props {
@@ -20,7 +20,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
       fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em',
-      textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)',
+      textTransform: 'uppercase', color: 'var(--color-text-muted)',
       marginBottom: '0.75rem',
     }}>
       {children}
@@ -29,7 +29,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function Divider() {
-  return <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '1.5rem 0' }} />
+  return <div style={{ height: '1px', background: 'color-mix(in srgb, var(--color-text) 6%, transparent)', margin: '1.5rem 0' }} />
 }
 
 export default function ProjectDetailsModal({ project, isOpen, onClose }: Props) {
@@ -77,7 +77,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
             aria-hidden="true"
             style={{
               position: 'fixed', inset: 0, zIndex: 100,
-              background: 'rgba(0,0,0,0.72)',
+              background: 'color-mix(in srgb, var(--color-bg) 72%, transparent)',
               backdropFilter: 'blur(6px)',
               WebkitBackdropFilter: 'blur(6px)',
             }}
@@ -108,10 +108,10 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
               width: '100%', maxWidth: '760px',
               maxHeight: '90vh',
               display: 'flex', flexDirection: 'column',
-              background: '#12121A',
-              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'var(--color-surface)',
+              border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
               borderRadius: '20px',
-              boxShadow: `0 0 80px rgba(0,0,0,0.6), 0 0 40px ${accent}18`,
+              boxShadow: `0 0 80px color-mix(in srgb, var(--color-bg) 60%, transparent), 0 0 40px color-mix(in srgb, ${accent} 9.4%, transparent)`,
               overflow: 'hidden',
             }}
             className="project-modal"
@@ -119,20 +119,20 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
             {/* Top accent */}
             <div style={{
               height: '2px', flexShrink: 0,
-              background: `linear-gradient(90deg, ${accent}, #4DA3FF)`,
+              background: `linear-gradient(90deg, ${accent}, var(--color-lilas-mid))`,
             }} />
 
             {/* Header */}
             <div style={{
               padding: '1.75rem 2rem 1.25rem',
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
+              borderBottom: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
               flexShrink: 0,
             }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                   <div style={{
                     width: '48px', height: '48px', borderRadius: '12px', flexShrink: 0,
-                    background: accentBg, border: `1px solid ${accent}35`,
+                    background: accentBg, border: `1px solid color-mix(in srgb, ${accent} 20.8%, transparent)`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
                     <Icon size={22} color={accent} />
@@ -141,7 +141,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
                       <span style={{
                         fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.07em',
-                        textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)',
+                        textTransform: 'uppercase', color: 'var(--color-text-muted)',
                       }}>
                         {category}
                       </span>
@@ -154,9 +154,9 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                       </span>
                     </div>
                     <h2 style={{
-                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '1.4rem', fontWeight: 800,
-                      color: '#fff', letterSpacing: '-0.02em', margin: 0,
+                      color: 'var(--color-text)', letterSpacing: '-0.02em', margin: 0,
                     }}>
                       {title}
                     </h2>
@@ -168,19 +168,19 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                   aria-label="Fechar modal"
                   style={{
                     flexShrink: 0, width: '36px', height: '36px',
-                    borderRadius: '9px', border: '1px solid rgba(255,255,255,0.1)',
-                    background: 'rgba(255,255,255,0.05)',
+                    borderRadius: '9px', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
+                    background: 'color-mix(in srgb, var(--color-text) 5%, transparent)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    cursor: 'pointer', color: 'rgba(255,255,255,0.5)',
+                    cursor: 'pointer', color: 'var(--color-text-muted)',
                     transition: 'all 0.2s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-                    e.currentTarget.style.color = '#fff'
+                    e.currentTarget.style.background = 'color-mix(in srgb, var(--color-text) 10%, transparent)'
+                    e.currentTarget.style.color = 'var(--color-text)'
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-                    e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
+                    e.currentTarget.style.background = 'color-mix(in srgb, var(--color-text) 5%, transparent)'
+                    e.currentTarget.style.color = 'var(--color-text-muted)'
                   }}
                 >
                   <X size={16} />
@@ -193,7 +193,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
 
               {/* Description */}
               <p style={{
-                fontSize: '0.92rem', color: 'rgba(255,255,255,0.6)',
+                fontSize: '0.92rem', color: 'var(--color-text-muted)',
                 lineHeight: 1.75, marginBottom: '1.5rem',
               }}>
                 {description}
@@ -203,19 +203,19 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }} className="modal-info-grid">
                 {infoBlocks.map(b => (
                   <div key={b.label} style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.07)',
+                    background: 'color-mix(in srgb, var(--color-text) 3%, transparent)',
+                    border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
                     borderRadius: '10px', padding: '0.9rem 1rem',
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
-                      <b.icon size={13} color="rgba(255,255,255,0.3)" />
-                      <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)' }}>
+                      <b.icon size={13} color="color-mix(in srgb, var(--color-text) 30%, transparent)" />
+                      <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--color-text-muted)' }}>
                         {b.label}
                       </span>
                     </div>
                     <p style={{
-                      fontFamily: '"Space Grotesk", sans-serif',
-                      fontSize: '0.9rem', fontWeight: 700, color: '#fff', margin: 0,
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-text)', margin: 0,
                     }}>
                       {b.value}
                     </p>
@@ -230,12 +230,12 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                 <SectionLabel>O que esse projeto resolve</SectionLabel>
                 <div style={{
                   display: 'flex', gap: '0.75rem', alignItems: 'flex-start',
-                  background: 'rgba(255,255,255,0.025)',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  background: 'color-mix(in srgb, var(--color-text) 2.5%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
                   borderRadius: '10px', padding: '1rem 1.1rem',
                 }}>
                   <AlertCircle size={15} color={accent} style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <p style={{ fontSize: '0.86rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.7, margin: 0 }}>
                     {problem}
                   </p>
                 </div>
@@ -246,7 +246,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                 <SectionLabel>Ideal para</SectionLabel>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                   {idealFor.map(item => (
-                    <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.6)' }}>
+                    <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', fontSize: '0.84rem', color: 'var(--color-text-muted)' }}>
                       <Users size={12} color={accent} style={{ flexShrink: 0 }} />
                       {item}
                     </div>
@@ -261,7 +261,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                 <SectionLabel>Funcionalidades incluídas</SectionLabel>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem' }} className="modal-features-grid">
                   {includedFeatures.map(f => (
-                    <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.83rem', color: 'rgba(255,255,255,0.55)' }}>
+                    <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.83rem', color: 'var(--color-text-muted)' }}>
                       <Check size={12} color={accent} strokeWidth={2.5} style={{ flexShrink: 0 }} />
                       {f}
                     </div>
@@ -274,7 +274,7 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
               {/* Adaptation */}
               <div>
                 <SectionLabel>Como pode ser adaptado</SectionLabel>
-                <p style={{ fontSize: '0.86rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, margin: 0 }}>
+                <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', lineHeight: 1.75, margin: 0 }}>
                   {adaptation}
                 </p>
               </div>
@@ -283,10 +283,10 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
             {/* Footer CTA */}
             <div className="modal-footer-ctas" style={{
               padding: '1.25rem 2rem 1.5rem',
-              borderTop: '1px solid rgba(255,255,255,0.07)',
+              borderTop: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
               flexShrink: 0,
               display: 'flex', gap: '0.75rem', flexWrap: 'wrap',
-              background: 'rgba(0,0,0,0.2)',
+              background: 'color-mix(in srgb, var(--color-bg) 20%, transparent)',
             }}>
               <a
                 href={wAdapt}
@@ -310,17 +310,17 @@ export default function ProjectDetailsModal({ project, isOpen, onClose }: Props)
                   display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                   gap: '0.45rem', fontSize: '0.88rem', fontWeight: 500,
                   padding: '0.75rem 1.5rem', borderRadius: '10px',
-                  textDecoration: 'none', color: 'rgba(255,255,255,0.75)',
-                  border: '1px solid rgba(255,255,255,0.14)',
+                  textDecoration: 'none', color: 'var(--color-text)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 14%, transparent)',
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-                  e.currentTarget.style.color = '#fff'
+                  e.currentTarget.style.background = 'color-mix(in srgb, var(--color-text) 5%, transparent)'
+                  e.currentTarget.style.color = 'var(--color-text)'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.75)'
+                  e.currentTarget.style.color = 'var(--color-text)'
                 }}
               >
                 <MessageCircle size={15} /> Falar no WhatsApp

@@ -12,7 +12,7 @@ import BrandWatermark from '../components/BrandWatermark'
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100vh', background: '#0B0B0F' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-bg)' }}>
       <Navbar />
       <main>
         <Hero />

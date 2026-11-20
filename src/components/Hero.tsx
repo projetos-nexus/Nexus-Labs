@@ -41,7 +41,7 @@ export default function Hero() {
           width: '700px',
           height: '700px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(123,92,255,0.18) 0%, rgba(123,92,255,0.04) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, color-mix(in srgb, var(--color-roxo) 18%, transparent) 0%, color-mix(in srgb, var(--color-roxo) 4%, transparent) 50%, transparent 70%)',
           filter: 'blur(40px)',
         }} />
         {/* Blue orb - bottom right */}
@@ -52,7 +52,7 @@ export default function Hero() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(77,163,255,0.14) 0%, rgba(77,163,255,0.03) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, color-mix(in srgb, var(--color-lilas-mid) 14%, transparent) 0%, color-mix(in srgb, var(--color-lilas-mid) 3%, transparent) 50%, transparent 70%)',
           filter: 'blur(40px)',
         }} />
         {/* Grid overlay */}
@@ -60,12 +60,12 @@ export default function Hero() {
           position: 'absolute',
           inset: 0,
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
+            linear-gradient(color-mix(in srgb, var(--color-text) 2.5%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--color-text) 2.5%, transparent) 1px, transparent 1px)
           `,
           backgroundSize: '64px 64px',
-          maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, var(--color-bg) 40%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, var(--color-bg) 40%, transparent 100%)',
         }} />
         {/* Center glow line */}
         <div style={{
@@ -75,7 +75,7 @@ export default function Hero() {
           transform: 'translate(-50%, -50%)',
           width: '600px',
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(123,92,255,0.4), transparent)',
+          background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-roxo) 40%, transparent), transparent)',
         }} />
       </div>
 
@@ -92,13 +92,13 @@ export default function Hero() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            background: 'rgba(123,92,255,0.1)',
-            border: '1px solid rgba(123,92,255,0.25)',
+            background: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-roxo) 25%, transparent)',
             borderRadius: '100px',
             padding: '0.35rem 1rem',
             fontSize: '0.8rem',
             fontWeight: 600,
-            color: '#9B82FF',
+            color: 'var(--color-lilas)',
             letterSpacing: '0.04em',
             textTransform: 'uppercase',
           }}>
@@ -114,12 +114,12 @@ export default function Hero() {
           animate="show"
           custom={1}
           style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(2.6rem, 6vw, 5rem)',
             fontWeight: 800,
             lineHeight: 1.08,
             letterSpacing: '-0.03em',
-            color: '#fff',
+            color: 'var(--color-text)',
             marginBottom: '1.5rem',
           }}
         >
@@ -135,7 +135,7 @@ export default function Hero() {
           custom={2}
           style={{
             fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-            color: 'rgba(255,255,255,0.6)',
+            color: 'var(--color-text-muted)',
             lineHeight: 1.7,
             maxWidth: '600px',
             margin: '0 auto 2.5rem',
@@ -143,7 +143,7 @@ export default function Hero() {
         >
           A Nexus Labs cria plataformas, automações e agentes inteligentes para transformar
           processos manuais em{' '}
-          <span style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>
+          <span style={{ color: 'var(--color-text)', fontWeight: 500 }}>
             controle, velocidade e resultado.
           </span>
         </motion.p>
@@ -216,13 +216,13 @@ export default function Hero() {
               <div style={{
                 textAlign: 'center',
                 padding: '0 2rem',
-                borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                borderRight: i < stats.length - 1 ? '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)' : 'none',
               }}>
                 <div style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '1.8rem',
                   fontWeight: 700,
-                  color: '#fff',
+                  color: 'var(--color-text)',
                   letterSpacing: '-0.02em',
                   lineHeight: 1,
                   marginBottom: '0.3rem',
@@ -231,7 +231,7 @@ export default function Hero() {
                 </div>
                 <div style={{
                   fontSize: '0.78rem',
-                  color: 'rgba(255,255,255,0.45)',
+                  color: 'var(--color-text-muted)',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
                 }}>

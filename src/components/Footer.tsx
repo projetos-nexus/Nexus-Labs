@@ -24,15 +24,15 @@ const links = {
 export default function Footer() {
   return (
     <footer style={{
-      borderTop: '1px solid rgba(255,255,255,0.07)',
+      borderTop: '1px solid color-mix(in srgb, var(--color-text) 7%, transparent)',
       padding: '4rem 1.5rem 2rem',
       position: 'relative',
     }}>
       {/* Glow line no topo */}
       <div style={{
         position: 'absolute', top: 0, left: '50%',
-        width: '600px', height: '1px',
-        background: 'linear-gradient(90deg, transparent, rgba(123,92,255,0.3), transparent)',
+        width: 'min(100%, 600px)', height: '1px',
+        background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-roxo) 30%, transparent), transparent)',
         transform: 'translateX(-50%)',
       }} />
 
@@ -62,7 +62,7 @@ export default function Footer() {
 
             <p style={{
               fontSize: '0.85rem',
-              color: 'rgba(255,255,255,0.4)',
+              color: 'var(--color-text-muted)',
               lineHeight: 1.75,
               maxWidth: '260px',
               marginBottom: '1.5rem',
@@ -75,78 +75,80 @@ export default function Footer() {
                 href={WA_URLS.ctaFinal}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Conversar no WhatsApp (abre em nova aba)"
                 style={{
                   width: '36px', height: '36px', borderRadius: '9px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.09)',
+                  background: 'color-mix(in srgb, var(--color-text) 5%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 9%, transparent)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.2s',
-                  color: 'rgba(255,255,255,0.5)',
+                  color: 'var(--color-text-muted)',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(123,92,255,0.15)'
-                  el.style.borderColor = 'rgba(123,92,255,0.3)'
-                  el.style.color = '#fff'
+                  el.style.background = 'color-mix(in srgb, var(--color-roxo) 15%, transparent)'
+                  el.style.borderColor = 'color-mix(in srgb, var(--color-roxo) 30%, transparent)'
+                  el.style.color = 'var(--color-text)'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(255,255,255,0.05)'
-                  el.style.borderColor = 'rgba(255,255,255,0.09)'
-                  el.style.color = 'rgba(255,255,255,0.5)'
+                  el.style.background = 'color-mix(in srgb, var(--color-text) 5%, transparent)'
+                  el.style.borderColor = 'color-mix(in srgb, var(--color-text) 9%, transparent)'
+                  el.style.color = 'var(--color-text-muted)'
                 }}
               >
-                <MessageCircle size={15} />
+                <MessageCircle size={15} aria-hidden="true" />
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&to=projetosnexus1@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Enviar e-mail para a Nexus Labs (abre em nova aba)"
                 style={{
                   width: '36px', height: '36px', borderRadius: '9px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.09)',
+                  background: 'color-mix(in srgb, var(--color-text) 5%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 9%, transparent)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.2s',
-                  color: 'rgba(255,255,255,0.5)',
+                  color: 'var(--color-text-muted)',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(77,163,255,0.15)'
-                  el.style.borderColor = 'rgba(77,163,255,0.3)'
-                  el.style.color = '#fff'
+                  el.style.background = 'color-mix(in srgb, var(--color-lilas-mid) 15%, transparent)'
+                  el.style.borderColor = 'color-mix(in srgb, var(--color-lilas-mid) 30%, transparent)'
+                  el.style.color = 'var(--color-text)'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget
-                  el.style.background = 'rgba(255,255,255,0.05)'
-                  el.style.borderColor = 'rgba(255,255,255,0.09)'
-                  el.style.color = 'rgba(255,255,255,0.5)'
+                  el.style.background = 'color-mix(in srgb, var(--color-text) 5%, transparent)'
+                  el.style.borderColor = 'color-mix(in srgb, var(--color-text) 9%, transparent)'
+                  el.style.color = 'var(--color-text-muted)'
                 }}
               >
-                <Mail size={15} />
+                <Mail size={15} aria-hidden="true" />
               </a>
             </div>
           </div>
 
           {/* Produto */}
           <div>
-            <h4 style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
               fontSize: '0.8rem', fontWeight: 600,
-              color: 'rgba(255,255,255,0.35)',
+              color: 'var(--color-text-muted)',
               letterSpacing: '0.08em', textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
               Produto
-            </h4>
+            </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {links.produto.map(link => (
                 <a key={link.label} href={link.href} style={{
-                  fontSize: '0.86rem', color: 'rgba(255,255,255,0.5)',
+                  fontSize: '0.86rem', color: 'var(--color-text-muted)',
                   textDecoration: 'none', transition: 'color 0.2s', width: 'fit-content',
                 }}
-                  onMouseEnter={e => { (e.target as HTMLElement).style.color = '#fff' }}
-                  onMouseLeave={e => { (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.5)' }}
+                  onMouseEnter={e => { (e.target as HTMLElement).style.color = 'var(--color-text)' }}
+                  onMouseLeave={e => { (e.target as HTMLElement).style.color = 'var(--color-text-muted)' }}
                 >
                   {link.label}
                 </a>
@@ -156,23 +158,23 @@ export default function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
               fontSize: '0.8rem', fontWeight: 600,
-              color: 'rgba(255,255,255,0.35)',
+              color: 'var(--color-text-muted)',
               letterSpacing: '0.08em', textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
               Empresa
-            </h4>
+            </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {links.empresa.map(link => (
                 <a key={link.label} href={link.href} style={{
-                  fontSize: '0.86rem', color: 'rgba(255,255,255,0.5)',
+                  fontSize: '0.86rem', color: 'var(--color-text-muted)',
                   textDecoration: 'none', transition: 'color 0.2s', width: 'fit-content',
                 }}
-                  onMouseEnter={e => { (e.target as HTMLElement).style.color = '#fff' }}
-                  onMouseLeave={e => { (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.5)' }}
+                  onMouseEnter={e => { (e.target as HTMLElement).style.color = 'var(--color-text)' }}
+                  onMouseLeave={e => { (e.target as HTMLElement).style.color = 'var(--color-text-muted)' }}
                 >
                   {link.label}
                 </a>
@@ -182,15 +184,15 @@ export default function Footer() {
 
           {/* Contato */}
           <div>
-            <h4 style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
               fontSize: '0.8rem', fontWeight: 600,
-              color: 'rgba(255,255,255,0.35)',
+              color: 'var(--color-text-muted)',
               letterSpacing: '0.08em', textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
               Contato
-            </h4>
+            </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {links.contato.map(link => (
                 <a
@@ -199,13 +201,13 @@ export default function Footer() {
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
                   style={{
-                    fontSize: '0.86rem', color: 'rgba(255,255,255,0.5)',
+                    fontSize: '0.86rem', color: 'var(--color-text-muted)',
                     textDecoration: 'none', transition: 'color 0.2s',
                     display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
                     width: 'fit-content',
                   }}
-                  onMouseEnter={e => { (e.currentTarget).style.color = '#fff' }}
-                  onMouseLeave={e => { (e.currentTarget).style.color = 'rgba(255,255,255,0.5)' }}
+                  onMouseEnter={e => { (e.currentTarget).style.color = 'var(--color-text)' }}
+                  onMouseLeave={e => { (e.currentTarget).style.color = 'var(--color-text-muted)' }}
                 >
                   {link.label}
                   {link.external && <ArrowUpRight size={11} />}
@@ -217,7 +219,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="footer-bottom" style={{
-          borderTop: '1px solid rgba(255,255,255,0.06)',
+          borderTop: '1px solid color-mix(in srgb, var(--color-text) 6%, transparent)',
           paddingTop: '1.5rem',
           display: 'flex',
           alignItems: 'center',
@@ -225,10 +227,10 @@ export default function Footer() {
           flexWrap: 'wrap',
           gap: '0.75rem',
         }}>
-          <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.25)' }}>
+          <span style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
             © {new Date().getFullYear()} Nexus Labs. Todos os direitos reservados.
           </span>
-          <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.2)' }}>
+          <span style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
             Feito com precisão e propósito.
           </span>
         </div>

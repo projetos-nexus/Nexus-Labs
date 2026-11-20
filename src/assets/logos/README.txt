@@ -1,15 +1,6 @@
-Assets transparentes Nexus Labs
+Logotipos usados pelos componentes da Nexus Labs
 
-Copie favicon.png para public/favicon.png.
-Copie os demais PNGs para src/assets/logos/.
-
-Arquivos:
-- logo-nexus-labs-dark.png
-- logo-nexus-labs-light.png
-- logo-nexus-labs-vertical-dark.png
-- logo-nexus-labs-tagline-dark.png
-- logo-nexus-labs-tagline-light.png
-- nexus-labs-icon.png
-- logo-nexus-labs-mono-white.png
-- nexus-labs-watermark-text.png
-- favicon.png
+- logo-nexus-labs-horizontal.svg — cópia de public/nova-identidade/svg/logo-horizontal-fundo-escuro.svg, usada na Navbar.
+- logo-nexus-labs-abreviado.svg — versão transparente da marca “5 · Abreviado NX” de public/nova-identidade/, preparada na T-006 para o Footer.
+- nexus-labs-icon.png — acervo original do site, usado na marca d’água e no painel interativo.
+- nexus-labs-watermark-text.png — acervo original do site, usado na marca d’água.

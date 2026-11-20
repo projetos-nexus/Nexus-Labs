@@ -23,8 +23,8 @@ const profiles = [
     description:
       'Quando informações importantes ficam espalhadas em arquivos manuais, o controle se perde e a tomada de decisão fica lenta.',
     points: ['Dados descentralizados', 'Retrabalho constante', 'Falta de visão em tempo real'],
-    accent: '#7B5CFF',
-    accentBg: 'rgba(123,92,255,0.1)',
+    accent: 'var(--color-roxo)',
+    accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
   {
     icon: MessageSquare,
@@ -32,8 +32,8 @@ const profiles = [
     description:
       'WhatsApp é ótimo para comunicação, mas não pode ser o principal sistema de controle da empresa.',
     points: ['Conversas soltas', 'Histórico difícil de encontrar', 'Falta de padrão nos atendimentos'],
-    accent: '#4DA3FF',
-    accentBg: 'rgba(77,163,255,0.1)',
+    accent: 'var(--color-lilas-mid)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)',
   },
   {
     icon: BarChart2,
@@ -41,8 +41,8 @@ const profiles = [
     description:
       'Sem dashboards e indicadores confiáveis, a gestão trabalha no escuro e só percebe problemas quando já é tarde.',
     points: ['Falta de indicadores', 'Relatórios manuais', 'Decisões sem dados confiáveis'],
-    accent: '#9B82FF',
-    accentBg: 'rgba(155,130,255,0.1)',
+    accent: 'var(--color-lilas)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)',
   },
   {
     icon: Settings2,
@@ -50,8 +50,8 @@ const profiles = [
     description:
       'Sistemas genéricos nem sempre acompanham a realidade da operação. Alguns negócios precisam de uma solução feita sob medida.',
     points: ['Fluxos próprios', 'Permissões específicas', 'Regras internas complexas'],
-    accent: '#7B5CFF',
-    accentBg: 'rgba(123,92,255,0.1)',
+    accent: 'var(--color-roxo)',
+    accentBg: 'color-mix(in srgb, var(--color-roxo) 10%, transparent)',
   },
   {
     icon: RefreshCw,
@@ -59,8 +59,8 @@ const profiles = [
     description:
       'Atividades manuais consomem tempo, aumentam erros e tiram a equipe do que realmente gera resultado.',
     points: ['Notificações manuais', 'Atualizações repetitivas', 'Baixa produtividade'],
-    accent: '#4DA3FF',
-    accentBg: 'rgba(77,163,255,0.1)',
+    accent: 'var(--color-lilas-mid)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas-mid) 10%, transparent)',
   },
   {
     icon: Building2,
@@ -68,8 +68,8 @@ const profiles = [
     description:
       'Um sistema bem feito muda a percepção do cliente, da equipe e da gestão sobre a maturidade da empresa.',
     points: ['Interface premium', 'Processos organizados', 'Mais confiança operacional'],
-    accent: '#9B82FF',
-    accentBg: 'rgba(155,130,255,0.1)',
+    accent: 'var(--color-lilas)',
+    accentBg: 'color-mix(in srgb, var(--color-lilas) 10%, transparent)',
   },
 ]
 
@@ -85,7 +85,7 @@ export default function TargetAudienceSection() {
       {/* Subtle background gradient */}
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(123,92,255,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 80% 50% at 50% 50%, color-mix(in srgb, var(--color-roxo) 4%, transparent) 0%, transparent 70%)',
       }} />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
@@ -99,19 +99,19 @@ export default function TargetAudienceSection() {
         >
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px', padding: '0.3rem 0.9rem',
             fontSize: '0.72rem', fontWeight: 700,
-            color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em',
+            color: 'var(--color-text-muted)', letterSpacing: '0.08em',
             textTransform: 'uppercase', marginBottom: '1.25rem',
           }}>
             Para quem é
           </div>
 
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-            fontWeight: 700, color: '#fff',
+            fontWeight: 700, color: 'var(--color-text)',
             letterSpacing: '-0.025em', marginBottom: '1rem',
           }}>
             Para empresas que precisam{' '}
@@ -119,7 +119,7 @@ export default function TargetAudienceSection() {
           </h2>
 
           <p style={{
-            fontSize: '1rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '1rem', color: 'var(--color-text-muted)',
             maxWidth: '600px', margin: '0 auto', lineHeight: 1.75,
           }}>
             Se sua operação ainda depende de planilhas, mensagens soltas, controles manuais ou sistemas que não
@@ -140,8 +140,8 @@ export default function TargetAudienceSection() {
                 transition={{ duration: 0.55, delay: 0.1 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 style={{
-                  background: 'rgba(18,18,26,0.8)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'color-mix(in srgb, var(--color-surface) 80%, transparent)',
+                  border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
                   borderRadius: '16px',
                   padding: '1.75rem',
                   position: 'relative',
@@ -153,14 +153,14 @@ export default function TargetAudienceSection() {
                 <div aria-hidden="true" style={{
                   position: 'absolute', bottom: '-30px', right: '-30px',
                   width: '130px', height: '130px', borderRadius: '50%',
-                  background: `radial-gradient(circle, ${profile.accent}0d 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, color-mix(in srgb, ${profile.accent} 5.1%, transparent) 0%, transparent 70%)`,
                   pointerEvents: 'none',
                 }} />
 
                 {/* Icon */}
                 <div style={{
                   width: '42px', height: '42px', borderRadius: '11px',
-                  background: profile.accentBg, border: `1px solid ${profile.accent}30`,
+                  background: profile.accentBg, border: `1px solid color-mix(in srgb, ${profile.accent} 18.8%, transparent)`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: '1.1rem',
                 }}>
@@ -169,9 +169,9 @@ export default function TargetAudienceSection() {
 
                 {/* Title */}
                 <h3 style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '1rem', fontWeight: 700,
-                  color: '#fff', letterSpacing: '-0.01em',
+                  color: 'var(--color-text)', letterSpacing: '-0.01em',
                   marginBottom: '0.6rem',
                 }}>
                   {profile.title}
@@ -179,7 +179,7 @@ export default function TargetAudienceSection() {
 
                 {/* Description */}
                 <p style={{
-                  fontSize: '0.83rem', color: 'rgba(255,255,255,0.48)',
+                  fontSize: '0.83rem', color: 'var(--color-text-muted)',
                   lineHeight: 1.7, marginBottom: '1.1rem',
                 }}>
                   {profile.description}
@@ -190,7 +190,7 @@ export default function TargetAudienceSection() {
                   {profile.points.map(point => (
                     <div key={point} style={{
                       display: 'flex', alignItems: 'center', gap: '0.5rem',
-                      fontSize: '0.77rem', color: 'rgba(255,255,255,0.38)',
+                      fontSize: '0.77rem', color: 'var(--color-text-muted)',
                     }}>
                       <AlertCircle size={11} color={profile.accent} style={{ flexShrink: 0 }} />
                       {point}
@@ -217,7 +217,7 @@ export default function TargetAudienceSection() {
           }}
         >
           <p style={{
-            fontSize: '1rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '1rem', color: 'var(--color-text-muted)',
             fontWeight: 400,
           }}>
             Identificou algum desses problemas na sua empresa?

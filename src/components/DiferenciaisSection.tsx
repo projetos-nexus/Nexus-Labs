@@ -16,49 +16,49 @@ const diferenciais = [
     icon: Palette,
     title: 'Interface premium',
     description: 'Sistemas que passam confiança para clientes, equipe e gestão desde o primeiro acesso.',
-    accent: '#7B5CFF',
+    accent: 'var(--color-roxo)',
   },
   {
     icon: Settings2,
     title: 'Processo sob medida',
     description: 'A solução acompanha o fluxo real da empresa, em vez de forçar a operação a se adaptar a um sistema genérico.',
-    accent: '#4DA3FF',
+    accent: 'var(--color-lilas-mid)',
   },
   {
     icon: Brain,
     title: 'IA integrada',
     description: 'Agentes inteligentes conectados aos processos para apoiar atendimento, análise, notificações e automações.',
-    accent: '#9B82FF',
+    accent: 'var(--color-lilas)',
   },
   {
     icon: MessageSquare,
     title: 'WhatsApp conectado',
     description: 'Notificações, atendimento e abertura de chamados integrados ao canal que a empresa já usa no dia a dia.',
-    accent: '#4DA3FF',
+    accent: 'var(--color-lilas-mid)',
   },
   {
     icon: BarChart2,
     title: 'Dashboards executivos',
     description: 'Indicadores claros para acompanhar operação, financeiro, atendimento e performance em tempo real.',
-    accent: '#7B5CFF',
+    accent: 'var(--color-roxo)',
   },
   {
     icon: ShieldCheck,
     title: 'Controle de acesso',
     description: 'Permissões por usuário, setor ou perfil para garantir segurança e organização.',
-    accent: '#9B82FF',
+    accent: 'var(--color-lilas)',
   },
   {
     icon: FileSpreadsheet,
     title: 'Relatórios e exportações',
     description: 'Dados organizados para análise, prestação de contas e tomada de decisão.',
-    accent: '#4DA3FF',
+    accent: 'var(--color-lilas-mid)',
   },
   {
     icon: Layers,
     title: 'Projetos prontos adaptáveis',
     description: 'Bases já construídas que reduzem tempo de entrega e aceleram a implantação.',
-    accent: '#7B5CFF',
+    accent: 'var(--color-roxo)',
   },
 ]
 
@@ -74,7 +74,7 @@ export default function DiferenciaisSection() {
     >
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(123,92,255,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 80% 50% at 50% 50%, color-mix(in srgb, var(--color-roxo) 4%, transparent) 0%, transparent 70%)',
       }} />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
@@ -88,19 +88,19 @@ export default function DiferenciaisSection() {
         >
           <div style={{
             display: 'inline-flex', alignItems: 'center',
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: 'color-mix(in srgb, var(--color-text) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--color-text) 10%, transparent)',
             borderRadius: '100px', padding: '0.3rem 0.9rem',
             fontSize: '0.72rem', fontWeight: 700,
-            color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em',
+            color: 'var(--color-text-muted)', letterSpacing: '0.08em',
             textTransform: 'uppercase', marginBottom: '1.25rem',
           }}>
             Diferenciais
           </div>
 
           <h2 style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-            fontWeight: 700, color: '#fff',
+            fontWeight: 700, color: 'var(--color-text)',
             letterSpacing: '-0.025em', marginBottom: '1rem',
           }}>
             Diferenciais que transformam sistema{' '}
@@ -108,7 +108,7 @@ export default function DiferenciaisSection() {
           </h2>
 
           <p style={{
-            fontSize: '1rem', color: 'rgba(255,255,255,0.5)',
+            fontSize: '1rem', color: 'var(--color-text-muted)',
             maxWidth: '600px', margin: '0 auto', lineHeight: 1.75,
           }}>
             A Nexus Labs não entrega apenas telas bonitas. Cada sistema é pensado para organizar processos,
@@ -128,8 +128,8 @@ export default function DiferenciaisSection() {
                 transition={{ duration: 0.55, delay: 0.08 + i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -3, transition: { duration: 0.18 } }}
                 style={{
-                  background: `radial-gradient(ellipse at top left, ${item.accent}08 0%, rgba(18,18,26,0.9) 65%)`,
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: `radial-gradient(ellipse at top left, color-mix(in srgb, ${item.accent} 3.1%, transparent) 0%, color-mix(in srgb, var(--color-surface) 90%, transparent) 65%)`,
+                  border: '1px solid color-mix(in srgb, var(--color-text) 8%, transparent)',
                   borderRadius: '14px',
                   padding: '1.4rem',
                   position: 'relative', overflow: 'hidden',
@@ -138,11 +138,11 @@ export default function DiferenciaisSection() {
                 }}
                 onHoverStart={e => {
                   const el = (e.target as HTMLElement).closest('[data-diff]') as HTMLElement
-                  if (el) { el.style.borderColor = `${item.accent}35`; el.style.boxShadow = `0 0 28px ${item.accent}0e` }
+                  if (el) { el.style.borderColor = `color-mix(in srgb, ${item.accent} 20.8%, transparent)`; el.style.boxShadow = `0 0 28px color-mix(in srgb, ${item.accent} 5.5%, transparent)` }
                 }}
                 onHoverEnd={e => {
                   const el = (e.target as HTMLElement).closest('[data-diff]') as HTMLElement
-                  if (el) { el.style.borderColor = 'rgba(255,255,255,0.08)'; el.style.boxShadow = 'none' }
+                  if (el) { el.style.borderColor = 'color-mix(in srgb, var(--color-text) 8%, transparent)'; el.style.boxShadow = 'none' }
                 }}
                 data-diff
               >
@@ -150,14 +150,14 @@ export default function DiferenciaisSection() {
                 <div aria-hidden="true" style={{
                   position: 'absolute', bottom: '-16px', right: '-16px',
                   width: '80px', height: '80px', borderRadius: '50%',
-                  background: `radial-gradient(circle, ${item.accent}10 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, color-mix(in srgb, ${item.accent} 6.3%, transparent) 0%, transparent 70%)`,
                   pointerEvents: 'none',
                 }} />
 
                 {/* Icon */}
                 <div style={{
                   width: '38px', height: '38px', borderRadius: '10px',
-                  background: `${item.accent}15`, border: `1px solid ${item.accent}28`,
+                  background: `color-mix(in srgb, ${item.accent} 8.2%, transparent)`, border: `1px solid color-mix(in srgb, ${item.accent} 15.7%, transparent)`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: '0.9rem',
                 }}>
@@ -165,16 +165,16 @@ export default function DiferenciaisSection() {
                 </div>
 
                 <h3 style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '0.92rem', fontWeight: 700,
-                  color: '#fff', letterSpacing: '-0.01em',
+                  color: 'var(--color-text)', letterSpacing: '-0.01em',
                   marginBottom: '0.45rem',
                 }}>
                   {item.title}
                 </h3>
 
                 <p style={{
-                  fontSize: '0.81rem', color: 'rgba(255,255,255,0.45)',
+                  fontSize: '0.81rem', color: 'var(--color-text-muted)',
                   lineHeight: 1.68, margin: 0,
                 }}>
                   {item.description}
@@ -191,8 +191,8 @@ export default function DiferenciaisSection() {
           transition={{ duration: 0.7, delay: 0.55 }}
           style={{
             marginTop: '3.5rem',
-            background: 'rgba(18,18,26,0.9)',
-            border: '1px solid rgba(255,255,255,0.09)',
+            background: 'color-mix(in srgb, var(--color-surface) 90%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-text) 9%, transparent)',
             borderRadius: '20px',
             padding: 'clamp(1.75rem, 4vw, 2.5rem)',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -203,20 +203,20 @@ export default function DiferenciaisSection() {
           {/* Glow line top */}
           <div style={{
             position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
-            background: 'linear-gradient(90deg, transparent, rgba(77,163,255,0.35), rgba(123,92,255,0.35), transparent)',
+            background: 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-lilas-mid) 35%, transparent), color-mix(in srgb, var(--color-roxo) 35%, transparent), transparent)',
           }} />
 
           <div style={{ maxWidth: '520px' }}>
             <h3 style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
-              fontWeight: 700, color: '#fff',
+              fontWeight: 700, color: 'var(--color-text)',
               letterSpacing: '-0.02em', marginBottom: '0.6rem',
             }}>
               O sistema precisa trabalhar a favor da operação.
             </h3>
             <p style={{
-              fontSize: '0.9rem', color: 'rgba(255,255,255,0.48)',
+              fontSize: '0.9rem', color: 'var(--color-text-muted)',
               lineHeight: 1.72, margin: 0,
             }}>
               Quando a tecnologia é bem desenhada, ela reduz ruído, organiza informações e ajuda a empresa
