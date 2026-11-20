@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0B0B0F;
-  --color-surface: #12121A;
-  --color-surface-alt: #1A1A26;
-  --color-border: rgba(255,255,255,0.08);
-  --color-border-strong: rgba(255,255,255,0.14);
-  --color-purple: #7B5CFF;
-  --color-purple-light: #9B82FF;
-  --color-blue: #4DA3FF;
-  --color-blue-light: #7BBFFF;
-  --color-text: #FFFFFF;
-  --color-text-muted: rgba(255,255,255,0.6);
-  --color-text-subtle: rgba(255,255,255,0.35);
+  --color-bg: #0B0A12;
+  --color-surface: #13101F;
+  --color-surface-alt: #13101F;
+  --color-border: #3A3550;
+  --color-border-strong: #3A3550;
+  --color-purple: #8B5CF6;
+  --color-purple-light: #C4B5FD;
+  --color-purple-mid: #A78BFA;
+  --color-purple-seal: #7C3AED;
+  --color-purple-dark: #6D28D9;
+  --color-roxo: #8B5CF6;
+  --color-lilas: #C4B5FD;
+  --color-lilas-mid: #A78BFA;
+  --color-selo: #7C3AED;
+  --color-text: #F4F3F8;
+  --color-text-muted: #A09CB8;
+  --color-text-subtle: #A09CB8;
+  --color-muted: #A09CB8;
 
   --font-sans: "Inter", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
@@ -31,8 +37,8 @@ html {
 }
 
 body {
-  background-color: #0B0B0F;
-  color: #FFFFFF;
+  background-color: #0B0A12;
+  color: #F4F3F8;
   font-family: "Inter", sans-serif;
   font-feature-settings: "cv02","cv03","cv04","cv11";
   line-height: 1.6;
@@ -50,32 +56,32 @@ h1, h2, h3, h4 {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0B0F;
+  background: #0B0A12;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(123,92,255,0.3);
+  background: rgba(139, 92, 246, 0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(123,92,255,0.6);
+  background: rgba(139, 92, 246, 0.6);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(123,92,255,0.35);
-  color: #fff;
+  background: rgba(139, 92, 246, 0.35);
+  color: #F4F3F8;
 }
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #7B5CFF 0%, #4DA3FF 100%);
+  background: linear-gradient(135deg, #8B5CF6 0%, #C4B5FD 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #9B82FF 0%, #7B5CFF 50%, #4DA3FF 100%);
+  background: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 50%, #8B5CF6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -83,32 +89,37 @@ h1, h2, h3, h4 {
 
 /* Glass card */
 .glass {
-  background: rgba(18,18,26,0.8);
+  background: rgba(19, 16, 31, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid #3A3550;
 }
 
 .glass-strong {
-  background: rgba(26,26,38,0.9);
+  background: rgba(19, 16, 31, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid #3A3550;
 }
 
 /* Glow effects */
 .glow-purple {
-  box-shadow: 0 0 40px rgba(123,92,255,0.15), 0 0 80px rgba(123,92,255,0.05);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15), 0 0 80px rgba(139, 92, 246, 0.05);
 }
 
+.glow-lilas {
+  box-shadow: 0 0 40px rgba(167, 139, 250, 0.15), 0 0 80px rgba(167, 139, 250, 0.05);
+}
+
+/* Alias glow-blue mantido para compatibilidade temporaria (T-003/T-004), mapeado para lilas medio */
 .glow-blue {
-  box-shadow: 0 0 40px rgba(77,163,255,0.15), 0 0 80px rgba(77,163,255,0.05);
+  box-shadow: 0 0 40px rgba(167, 139, 250, 0.15), 0 0 80px rgba(167, 139, 250, 0.05);
 }
 
 /* Premium button */
 .btn-primary {
-  background: linear-gradient(135deg, #7B5CFF 0%, #6244E8 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  color: #F4F3F8;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -119,7 +130,7 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 24px rgba(123,92,255,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(244, 243, 248, 0.15);
   letter-spacing: 0.01em;
 }
 
@@ -127,14 +138,14 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(244, 243, 248, 0.12) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.25s;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(123,92,255,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 8px 40px rgba(139, 92, 246, 0.45), inset 0 1px 0 rgba(244, 243, 248, 0.2);
 }
 
 .btn-primary:hover::before {
@@ -147,22 +158,22 @@ h1, h2, h3, h4 {
 
 .btn-secondary {
   background: transparent;
-  color: rgba(255,255,255,0.85);
+  color: #F4F3F8;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
   padding: 0.75rem 1.75rem;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid #3A3550;
   cursor: pointer;
   transition: all 0.25s ease;
   letter-spacing: 0.01em;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.25);
-  color: #fff;
+  background: rgba(167, 139, 250, 0.08);
+  border-color: #8B5CF6;
+  color: #F4F3F8;
   transform: translateY(-1px);
 }
 
@@ -179,7 +190,7 @@ img, video, canvas, svg {
 
 /* ── Focus visible ───────────────────────────────── */
 :focus-visible {
-  outline: 2px solid rgba(123,92,255,0.7);
+  outline: 2px solid #8B5CF6;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -221,5 +232,17 @@ img, video, canvas, svg {
 @media (max-width: 480px) {
   .section-title {
     font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+}
+
+/* ── Acessibilidade: prefers-reduced-motion ──────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
