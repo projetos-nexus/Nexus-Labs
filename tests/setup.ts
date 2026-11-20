@@ -1,0 +1,47 @@
+// Setup global dos testes de unidade/componente.
+import '@testing-library/jest-dom/vitest'
+import 'vitest-axe/extend-expect'
+import * as matchers from 'vitest-axe/matchers'
+import { expect, vi } from 'vitest'
+import { cleanup } from '@testing-library/react'
+
+// vitest-axe 0.1.0 usa a API expect.extend (a mesma do jest-axe).
+expect.extend(matchers)
+
+afterEach(() => {
+  cleanup()
+})
+
+// O framer-motion consulta matchMedia/IntersectionObserver/ResizeObserver.
+// jsdom nao implementa essas APIs; mocks inertes mantêm os testes estaveis.
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(() => false),
+  })),
+})
+
+class ObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() {
+    return []
+  }
+}
+
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  value: ObserverMock,
+})
+Object.defineProperty(window, 'ResizeObserver', {
+  writable: true,
+  value: ObserverMock,
+})
