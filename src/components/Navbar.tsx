@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import logoNexusLabsDark from '../assets/logos/logo-nexus-labs-dark.png'
+import logoNexusLabsLinhaUnica from '../assets/logos/logo-nexus-labs-linha-unica.svg'
 
 const navLinks = [
   { label: 'Serviços', href: '#servicos' },
@@ -41,11 +41,11 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <img
-                src={logoNexusLabsDark}
+                src={logoNexusLabsLinhaUnica}
                 alt="Nexus Labs"
                 loading="eager"
                 className="navbar-logo"
-                style={{ height: '38px', width: 'auto', objectFit: 'contain', display: 'block' }}
+                style={{ height: '32px', width: 'auto', maxWidth: '320px', objectFit: 'contain', display: 'block' }}
               />
             </a>
 
@@ -91,6 +91,9 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="show-mobile"
+                aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
+                aria-expanded={mobileOpen}
+                aria-controls={mobileOpen ? 'mobile-nav-menu' : undefined}
                 style={{
                   background: 'rgba(255,255,255,0.06)',
                   border: '1px solid rgba(255,255,255,0.1)',
@@ -113,6 +116,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-nav-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -165,12 +169,12 @@ export default function Navbar() {
         @media (min-width: 768px) {
           .hidden-mobile { display: flex !important; }
           .show-mobile { display: none !important; }
-          .navbar-logo { height: 38px !important; }
+          .navbar-logo { height: 32px !important; max-width: 320px !important; width: auto !important; }
         }
         @media (max-width: 767px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
-          .navbar-logo { height: 32px !important; }
+          .navbar-logo { height: 22px !important; max-width: 220px !important; width: auto !important; }
         }
       `}</style>
     </>

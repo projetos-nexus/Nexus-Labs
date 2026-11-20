@@ -1,5 +1,5 @@
 import { MessageCircle, Mail, ArrowUpRight } from 'lucide-react'
-import logoNexusLabsTaglineDark from '../assets/logos/logo-nexus-labs-tagline-dark.png'
+import logoNexusLabsAbreviado from '../assets/logos/logo-nexus-labs-abreviado.svg'
 import { WA_URLS } from '../config/contact'
 
 const links = {
@@ -48,11 +48,11 @@ export default function Footer() {
           <div>
             <a href="#" style={{ display: 'inline-flex', textDecoration: 'none', marginBottom: '1.25rem' }}>
               <img
-                src={logoNexusLabsTaglineDark}
+                src={logoNexusLabsAbreviado}
                 alt="Nexus Labs"
                 loading="lazy"
                 style={{
-                  height: '52px',
+                  height: '46px',
                   width: 'auto',
                   objectFit: 'contain',
                   display: 'block',
