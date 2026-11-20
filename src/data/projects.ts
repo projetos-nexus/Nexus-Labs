@@ -42,8 +42,8 @@ export const projects: Project[] = [
     features: ['Pedidos e status em tempo real', 'Programação e carregamento', 'Dashboards executivos'],
     status: 'Projeto pronto',
     featured: true,
-    accent: '#7B5CFF',
-    accentBg: 'rgba(123,92,255,0.12)',
+    accent: '#8B5CF6',
+    accentBg: 'rgba(139,92,246,0.12)',
     problem:
       'Empresas que perdem controle sobre pedidos, status, programação, carregamento e acompanhamento operacional.',
     idealFor: [
@@ -74,8 +74,8 @@ export const projects: Project[] = [
       'Sistema de chamados com setores, prioridades, avaliações, histórico e acompanhamento de atendimento.',
     features: ['Abertura e gestão de chamados', 'Avaliação de atendimento', 'Controle por usuários e setores'],
     status: 'Adaptável',
-    accent: '#4DA3FF',
-    accentBg: 'rgba(77,163,255,0.12)',
+    accent: '#A78BFA',
+    accentBg: 'rgba(167,139,250,0.12)',
     problem:
       'Empresas que ainda controlam chamados por WhatsApp, planilhas ou conversas soltas, sem histórico e sem prioridade clara.',
     idealFor: [
@@ -107,8 +107,8 @@ export const projects: Project[] = [
       'Dashboards, análises, relatórios e visão gerencial para acompanhar números com clareza.',
     features: ['Indicadores financeiros', 'Relatórios e exportações', 'Visão gerencial'],
     status: 'Adaptável',
-    accent: '#4ADE80',
-    accentBg: 'rgba(74,222,128,0.1)',
+    accent: '#C4B5FD',
+    accentBg: 'rgba(196,181,253,0.1)',
     problem:
       'Empresas que não possuem visão clara dos números, indicadores, relatórios e análises financeiras em tempo real.',
     idealFor: [
@@ -139,8 +139,8 @@ export const projects: Project[] = [
       'Automação via WhatsApp com notificações, atendimento inteligente e abertura de chamados.',
     features: ['Atendimento automatizado', 'Notificações inteligentes', 'Integração com WhatsApp'],
     status: 'Sob medida',
-    accent: '#9B82FF',
-    accentBg: 'rgba(155,130,255,0.12)',
+    accent: '#C4B5FD',
+    accentBg: 'rgba(196,181,253,0.12)',
     problem:
       'Empresas que perdem tempo com atendimento repetitivo, notificações manuais e falta de automação nos canais de comunicação.',
     idealFor: [
@@ -172,8 +172,8 @@ export const projects: Project[] = [
       'Controle completo de processos internos, equipes, etapas, status e indicadores em tempo real.',
     features: ['Fluxos personalizados', 'Permissões por perfil', 'Indicadores de operação'],
     status: 'Sob medida',
-    accent: '#F59E0B',
-    accentBg: 'rgba(245,158,11,0.1)',
+    accent: '#8B5CF6',
+    accentBg: 'rgba(139,92,246,0.1)',
     problem:
       'Empresas que dependem de controles manuais, planilhas e processos descentralizados para acompanhar a operação.',
     idealFor: [
