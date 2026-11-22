@@ -1,8 +1,8 @@
 ﻿# Passagem — pesquisador
-Atualizado: 2026-11-19 22:01 por principal (Codex)
-Tarefa atual: P-002 — Estrutura multipágina do portfólio.
-Feito até agora: pesquisa salva em .equipe/pesquisas/P-002-estrutura-multipagina.md. Inventário local, duas referências oficiais de estúdios, documentação técnica e compatibilidade do Router conferidos. Lint e TypeScript passaram. Vitest não encontrou testes.
-Próximo passo exato: aguardar a decisão de arquitetura. O Maestro recebeu o resumo pelo Maestri e registrou a P-002 como concluída no painel.
+Atualizado: 2026-11-22 00:18 por principal (Codex)
+Tarefa atual: P-003 — Efeitos 3D que reagem ao cursor.
+Feito até agora: pesquisa salva em .equipe/pesquisas/P-003-efeitos-3d-cursor.md, com quatro opções, pesos, três conceitos, checagem CSP e três referências. Lint, TypeScript, build Vite sem escrita e dois testes passaram.
+Próximo passo exato: aguardar avaliação do Maestro. Resumo enviado pelo Maestri e visualizado no terminal do Maestro.
 Arquivos em edição: nenhum.
-Decisões: pesquisa recomenda React Router v7 Framework Mode com SSG. Aprovação fica com Maestro/Kaio.
-Dúvidas abertas: domínio, retrato e biografia autorizados, escopo por oferta, comprovação dos casos e validação do deploy Preview.
+Decisões: recomendação de CSS 3D e Framer Motion no Hero, com experiência estática em toque e movimento reduzido.
+Dúvidas abertas: confirmar desempenho e CSP em runtime após implementar o piloto.

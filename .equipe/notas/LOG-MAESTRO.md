@@ -105,3 +105,7 @@ Formato: `AAAA-MM-DD HH:MM | principal|reserva | decisão/ação | motivo`
 2026-11-19 23:28 | principal | T-018 passou (177 textos roxo/lilás, 0 < 4,5:1; mín. 5,90:1) → Avaliador | fluxo
 2026-11-19 23:30 | principal | T-018 APROVADA → commitada (db83cb5); verificação final do Maestro: build, lint, typecheck, test ok; npm audit 0 | fluxo
 2026-11-19 23:30 | principal | CICLO 01 CONCLUÍDO; relatório enviado ao Kaio; pendente S-003 e decisões do ciclo 02 | fim de ciclo
+2026-11-22 00:14 | principal | sobe o dev: Vite 8.3.8 em http://localhost:5173/ (branch ciclo/01-identidade, db83cb5), sem erro; portal Preview recarregado | pedido do Kaio
+2026-11-22 00:15 | principal | Kaio confirmou estrutura multipágina e pediu efeitos 3D reagindo ao cursor; P-003 ao Pesquisador (conflito potencial com Lighthouse mobile ≥ 90) | pedido do Kaio
+2026-11-22 00:18 | principal | Kaio decidiu: pré-renderização; + Sites sob medida; rascunhos pelo Pesquisador; status só paleta; mover foto; remover c2pa das cópias; regra do roxo; push da branch ciclo/01 | AskUserQuestion
+2026-11-22 00:18 | principal | foto movida public/nova-identidade/foto → originais/foto (S-003 fechado); regras do roxo e do status gravadas em REGRAS-COMUNS §2 (OK do Kaio); P-003 concluída | execução das decisões

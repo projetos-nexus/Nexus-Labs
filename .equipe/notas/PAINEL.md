@@ -26,6 +26,7 @@ Atualizado: 2026-11-19 23:30 por Maestro principal
 | T-016 | Cores fora da paleta restantes: Navbar.tsx (rgba(11,11,15,…), rgba(255,255,255,…)) e pages/Home.tsx (#0B0B0F) → tokens | Frontend | codex (reserva) | concluido | - | lacuna do Maestro na divisão de tarefas | 0 | 19/11 22:42 |
 | T-017 | B-005 (alta): .btn-primary global com texto #F4F3F8 sobre #8B5CF6 = 3,84:1 (< AA) em 8 CTAs; corrigir gradiente e remover .navbar-cta | Frontend | codex (reserva) | concluido | - | - | 0 | 19/11 22:49 |
 | T-018 | B-006: 7 textos em roxo #8B5CF6 sobre fundos tingidos com 4,0–4,2:1 (ProjectCard '6+', VisualProof 'KPIs…'/'Agente', números de etapa do Processo, CTASection 'Iniciado') → lilas-mid | Frontend | codex (reserva) | concluido | - | - | 0 | 19/11 23:30 |
+| P-003 | Efeitos 3D que reagem ao cursor (opções, desempenho, acessibilidade, conceito) | Pesquisador | codex (principal) | concluido | P-002 | - | 0 | 22/11 00:18 |
 
 Status: `a-fazer` · `em-andamento` · `em-teste` · `em-avaliacao` · `em-seguranca` · `reprovado` · `bloqueado` · `concluido`
 Marque "revisão na mesma CLI" na coluna Bloqueio quando autor e revisor rodaram na mesma CLI.
@@ -55,5 +56,5 @@ Marque "revisão na mesma CLI" na coluna Bloqueio quando autor e revisor rodaram
 |---|---|---|---|
 | S-001 (npm audit, ex-A-001) | média (8 altas só em devDeps; produção = 0) | FECHADO (audit 0/0, reverificado) | Blue Team |
 | S-002 cabeçalhos HTTP | baixa | FECHADO (vercel.json; reverificado pelo Red Team 23:02; validar na Vercel no preview) | Blue Team |
-| S-003 retrato em public/ sem uso | baixa | decisão do Kaio | Maestro/Kaio |
+| S-003 retrato em public/ sem uso | baixa | FECHADO (foto movida para originais/foto/ por decisão do Kaio; derivados otimizados no ciclo 02) | Maestro/Kaio |
 | S-004 sprite icons.svg órfão em public/ | baixa | FECHADO (reverificado) | Tarefas Rápidas |

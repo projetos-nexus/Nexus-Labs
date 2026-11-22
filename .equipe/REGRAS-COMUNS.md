@@ -37,6 +37,8 @@ Regras de cor:
 - O site é **escuro por padrão**. Versão clara só onde fizer sentido (impressão, documentos).
 - **Não usar cores fora da tabela** sem decisão registrada. Atenção: o `src/styles/globals.css` atual usa uma paleta antiga (`#7B5CFF`, azul `#4DA3FF`, fundo `#0B0B0F`). A migração para a tabela acima é trabalho do Frontend; manter ou remover o azul é decisão do Kaio (o Maestro pergunta).
 - Contraste mínimo WCAG AA (4,5:1 para texto normal).
+- **Roxo `#8B5CF6` não é cor de texto pequeno.** Texto sobre fundo escuro usa lilás (`#C4B5FD`) ou lilás médio (`#A78BFA`); o roxo fica para ícones, linhas, bordas, fundos e botões (com texto claro sobre roxo escuro `#7C3AED`/`#6D28D9`). Decisão do Kaio em 22/11/2026, após os bugs B-005 e B-006.
+- **Indicadores de situação** (status) também ficam só na paleta: diferenciar por ícone, peso da fonte e intensidade do lilás, nunca só por cor. Decisão do Kaio em 22/11/2026.
 
 ### Tipografia
 

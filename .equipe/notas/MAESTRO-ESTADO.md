@@ -56,3 +56,14 @@ Ver `PAINEL.md` e `node .equipe/cota/verificar-cota.mjs`.
 - Script agregado "verificar" (lint + typecheck + test) — sugestão T-014.
 - Validar cabeçalhos (vercel.json/HSTS) no preview da Vercel.
 - Reavaliar import da Michroma no fim do ciclo 02.
+
+## Decisões do Kaio (22/11)
+- Arquitetura do ciclo 02: React Router v7 com PRÉ-RENDERIZAÇÃO (SSG) — P-002.
+- Páginas: Início, Sobre (com foto), Serviços + 4 subpáginas (Sistemas, Automações, IA, SITES SOB MEDIDA), Projetos + 5 casos, Processo, Orçamento, Contato, 404. Sem página por setor por enquanto.
+- Textos: Pesquisador rascunha cada página a partir do site atual, com lacunas marcadas; Kaio revisa e completa.
+- Status: diferenciar por ícone + peso + intensidade do lilás, só paleta (regra em REGRAS-COMUNS §2).
+- Foto: movida para originais/foto/ (fora do public); ciclo 02 gera versões otimizadas sem metadados para /sobre.
+- c2pa: remover das cópias de SVG usadas no site; originais intactos.
+- Regra: roxo #8B5CF6 não é cor de texto pequeno (REGRAS-COMUNS §2).
+- Push da branch ciclo/01-identidade autorizado (sem merge na main).
+- NOVO: efeitos 3D que reagem ao cursor para prender o visitante — base P-003 (CSS 3D + Framer Motion primeiro; Canvas 2D depois; WebGL só se necessário; estático em toque/reduced-motion; Lighthouse mobile ≥ 90 mantido).
